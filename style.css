@@ -265,9 +265,9 @@ section {
 
 .nav-links a {
   display: block;
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.6rem;
   font-family: var(--font-heading);
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   font-weight: 500;
   text-decoration: none;
   border: 2px solid transparent;
@@ -1656,6 +1656,7 @@ mark {
   .grid-3 { grid-template-columns: 1fr; }
   .grid-4 { grid-template-columns: 1fr; }
 
+  .nav-logo { font-size: 1.2rem; }
   .nav-links:not(.is-open) { display: none; }
   .mobile-menu-toggle { display: block; }
 
@@ -1709,7 +1710,7 @@ mark {
   h3, .h3 { font-size: 1.2rem; }
   h4, .h4 { font-size: 1.05rem; }
 
-  .nav-logo { font-size: 1.1rem; }
+  .nav-logo { font-size: 0.95rem; letter-spacing: -0.04em; }
 
   .section-label { font-size: 0.65rem; padding: 0.3rem 0.5rem; }
 
