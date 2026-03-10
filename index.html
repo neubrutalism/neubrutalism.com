@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neubrutalism — The Definitive Guide to Neubrutalist Web Design</title>
+  <meta name="description" content="The authoritative reference on Neubrutalism in web design. History, visual anatomy, code patterns, UX best practices, and implementation guide. A masterclass that exemplifies the style it teaches.">
+  <meta name="keywords" content="neubrutalism, neo-brutalism, web design, UI design, neobrutalism, brutalist web design, design trend, CSS, web development">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Neubrutalism — The Definitive Guide">
+  <meta property="og:description" content="The authoritative reference on Neubrutalist web design. History, anatomy, code, and best practices.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neubrutalism.com">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Neubrutalism — The Definitive Guide">
+  <meta name="twitter:description" content="The authoritative reference on Neubrutalist web design. History, anatomy, code, and best practices.">
+  <meta name="twitter:image" content="https://neubrutalism.com/og-image.jpg">
+  <meta property="og:image" content="https://neubrutalism.com/og-image.jpg">
+
+  <!-- Canonical & Author -->
+  <link rel="canonical" href="https://neubrutalism.com/">
+  <meta name="author" content="neubrutalism.com">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=DM+Sans:wght@400;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;700&family=Outfit:wght@400;700&family=Plus+Jakarta+Sans:wght@400;700&family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" id="main-stylesheet">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "Neubrutalism — The Definitive Guide to Neubrutalist Web Design",
+        "description": "The authoritative reference on Neubrutalism in web design covering history, visual anatomy, code patterns, UX best practices, and implementation guide.",
+        "url": "https://neubrutalism.com/",
+        "datePublished": "2025-03-10",
+        "dateModified": "2025-03-10",
+        "image": "https://neubrutalism.com/og-image.jpg",
+        "author": {
+          "@type": "Organization",
+          "name": "neubrutalism.com",
+          "url": "https://neubrutalism.com/"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "neubrutalism.com",
+          "url": "https://neubrutalism.com/"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://neubrutalism.com/"
+        },
+        "articleSection": ["Web Design", "UI Design", "CSS", "Design History"],
+        "keywords": "neubrutalism, neo-brutalism, neobrutalism, web design, UI design, CSS, brutalist web design, design trend"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Neubrutalism in web design?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neubrutalism is a contemporary web and UI design movement that rejects polished neutrality in favor of graphic bluntness: high-contrast palettes, bold typography, thick outlines, hard offset shadows with zero blur, square corners, and conspicuous structure. Unlike earlier web brutalism, it translates rebellious anti-design energy into a repeatable, commercially usable interface grammar suitable for design systems, component libraries, and commercial products."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does Neubrutalism differ from web brutalism?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Web brutalism (2010s) was often deliberately raw, awkward, and anti-conventional — a manifesto-like rejection of polished web design rooted in ideology. Neubrutalism (2020s) softened that rebellion into a repeatable UI grammar with thick outlines, hard shadows, square corners, oversized type, and loud color blocks, suitable for design systems, UI kits, Figma component libraries, and commercial products. Web brutalism was anti-system; neubrutalism became system-friendly."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Neubrutalism accessible?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neubrutalism can be accessible when implemented carefully. Its large headings, strong borders, and high-contrast palette can support scanning and discoverability. However, common failure modes include contrast failures with loud palettes (WCAG requires 4.5:1 for normal text), relying on color alone to convey meaning, undersized click targets disguised by thick borders, and decorative shadows that obscure keyboard focus indicators. Accessibility must be verified against WCAG 2.2, not assumed from visual loudness."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What CSS properties define Neubrutalism?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The core CSS properties are: border (typically 2-4px solid black), box-shadow with hard offset and zero blur (e.g., 5px 5px 0 0 #000), border-radius of 0 (square corners), flat high-saturation background colors without gradients, and bold font-weight on oversized display typography. These can be tokenized as CSS custom properties for a complete design system."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Skip Link -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="container container-wide">
+      <a href="#" class="nav-logo">NEUBRUTALISM<span style="color: var(--pink);">.</span></a>
+      <ul class="nav-links" id="nav-links" role="list">
+        <li><a href="#definition">Definition</a></li>
+        <li><a href="#anatomy">Visual DNA</a></li>
+        <li><a href="#typography">Fonts</a></li>
+        <li><a href="#history">History</a></li>
+        <li><a href="#implementation">Code</a></li>
+        <li><a href="#usage">Usage</a></li>
+        <li><a href="#ecosystem">Ecosystem</a></li>
+        <li><a href="#future">Future</a></li>
+        <li><a href="https://github.com/neubrutalism/neubrutalism.com" rel="noopener" style="border: var(--border-thin); background: var(--black); color: var(--white);">GitHub</a></li>
+      </ul>
+      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">MENU</button>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <header class="hero">
+    <div class="pattern-dots"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="badge badge-pink mb-md">Est. Early 2020s</div>
+        <h1 class="hero-title">NEU<br>BRUTAL<br>ISM</h1>
+        <p class="hero-subtitle">
+          The definitive guide to the design movement that refuses to be invisible.
+        </p>
+        <p class="hero-description">
+          A comprehensive, authoritative reference covering history, visual anatomy, code patterns, accessibility, and implementation strategy. This page doesn't just describe neubrutalism&thinsp;&mdash;&thinsp;it <em>is</em> neubrutalism.
+        </p>
+        <div class="hero-cta">
+          <a href="#definition" class="btn btn-primary">Start reading</a>
+          <a href="#implementation" class="btn btn-yellow">See the code</a>
+        </div>
+      </div>
+
+      <div class="hero-cards" aria-hidden="true">
+        <div class="hero-card">border: 3px solid #000;</div>
+        <div class="hero-card">box-shadow: 5px 5px 0 0 #000;</div>
+        <div class="hero-card">border-radius: 0;</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MARQUEE
+       ============================================================ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <div class="marquee-content">
+        <span>Hard Shadows</span> <span class="marquee-dot"></span>
+        <span>Thick Borders</span> <span class="marquee-dot"></span>
+        <span>Square Corners</span> <span class="marquee-dot"></span>
+        <span>Flat Color</span> <span class="marquee-dot"></span>
+        <span>Bold Type</span> <span class="marquee-dot"></span>
+        <span>Zero Blur</span> <span class="marquee-dot"></span>
+        <span>Visible Structure</span> <span class="marquee-dot"></span>
+        <span>Anti-Polish</span> <span class="marquee-dot"></span>
+        <span>Offset Depth</span> <span class="marquee-dot"></span>
+        <span>Loud Personality</span> <span class="marquee-dot"></span>
+        <span>Exposed Grids</span> <span class="marquee-dot"></span>
+        <span>No Gradients</span> <span class="marquee-dot"></span>
+      </div>
+      <div class="marquee-content">
+        <span>Hard Shadows</span> <span class="marquee-dot"></span>
+        <span>Thick Borders</span> <span class="marquee-dot"></span>
+        <span>Square Corners</span> <span class="marquee-dot"></span>
+        <span>Flat Color</span> <span class="marquee-dot"></span>
+        <span>Bold Type</span> <span class="marquee-dot"></span>
+        <span>Zero Blur</span> <span class="marquee-dot"></span>
+        <span>Visible Structure</span> <span class="marquee-dot"></span>
+        <span>Anti-Polish</span> <span class="marquee-dot"></span>
+        <span>Offset Depth</span> <span class="marquee-dot"></span>
+        <span>Loud Personality</span> <span class="marquee-dot"></span>
+        <span>Exposed Grids</span> <span class="marquee-dot"></span>
+        <span>No Gradients</span> <span class="marquee-dot"></span>
+      </div>
+    </div>
+  </div>
+
+
+  <main id="main">
+
+    <!-- ============================================================
+         SECTION 1: DEFINITION
+         ============================================================ -->
+    <section id="definition" class="bg-white" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">01 &mdash; Definition</span>
+        <h2 class="mb-lg">What Is Neubrutalism?</h2>
+
+        <div class="grid grid-2" style="gap: var(--space-xl);">
+          <div>
+            <p class="section-intro mb-lg">
+              Neubrutalism is a contemporary web and UI design movement that rejects polished neutrality in favor of <mark>graphic bluntness</mark>: high-contrast palettes, bold typography, strongly defined shapes, and conspicuous structure&thinsp;&mdash;&thinsp;especially outlines and hard shadows.
+            </p>
+            <p>
+              Unlike earlier web brutalism, which was often deliberately raw, awkward, and anti-conventional, neubrutalism translates that rebellious energy into a <strong>repeatable, commercially usable interface grammar</strong>. It is less "true brutalism on the web" and more a productized anti-design dialect. The interface doesn't disappear into frictionless neutrality&thinsp;&mdash;&thinsp;it declares its presence.
+            </p>
+            <p>
+              Its core philosophy can be stated plainly: <strong>explicitness over subtlety, personality over invisibility, and memorable structure over perfect polish.</strong> Good neubrutalism is intentionally emphatic, not accidentally clumsy. That final distinction is crucial.
+            </p>
+          </div>
+          <div>
+            <div class="pullquote">
+              Neubrutalism is the 2020s domestication of anti-design energy. It borrows brutalism's language of bluntness and exposed structure, borrows postmodern anti-design's appetite for friction and play, and borrows web brutalism's resistance to polished sameness.
+            </div>
+          </div>
+        </div>
+
+        <!-- Three-way comparison -->
+        <h3 class="mt-2xl mb-lg">Three Generations of Brutalism</h3>
+        <div class="grid grid-3 era-grid">
+
+          <!-- Era 1: Architectural -->
+          <div class="era-card">
+            <div class="era-card-header" style="background: var(--bg-warm);">
+              <span class="era-card-era">1950s&ndash;1970s</span>
+              <h4 class="era-card-title">Architectural Brutalism</h4>
+            </div>
+            <dl class="era-card-body">
+              <dt>Domain</dt>
+              <dd>Built environment. Post-WWII modernism. Exposed materials and structure.</dd>
+              <dt>Visual signature</dt>
+              <dd>Mass, heavy forms. Material texture. Exposed services.</dd>
+              <dt>Usability stance</dt>
+              <dd>Not a UI concept. Judged via architecture's functional aims.</dd>
+              <dt>Execution</dt>
+              <dd>Material "truth." Minimal ornament.</dd>
+              <dt>Intent</dt>
+              <dd>Structural honesty and utilitarian function.</dd>
+            </dl>
+          </div>
+
+          <!-- Era 2: Web Brutalism -->
+          <div class="era-card">
+            <div class="era-card-header" style="background: var(--pink-light);">
+              <span class="era-card-era">2014&ndash;2020</span>
+              <h4 class="era-card-title">Web Brutalism</h4>
+            </div>
+            <dl class="era-card-body">
+              <dt>Domain</dt>
+              <dd>Digital. Rawness and anti-template pushback. Often contested definition.</dd>
+              <dt>Visual signature</dt>
+              <dd>Either extreme simplicity or deliberate rule-breaking.</dd>
+              <dt>Usability stance</dt>
+              <dd>Sometimes anti-UX. Sometimes "UX minimalist."</dd>
+              <dt>Execution</dt>
+              <dd>Directories. Raw HTML aesthetics.</dd>
+              <dt>Intent</dt>
+              <dd>Ideological pushback against "the pretty web."</dd>
+            </dl>
+          </div>
+
+          <!-- Era 3: Neubrutalism -->
+          <div class="era-card">
+            <div class="era-card-header" style="background: var(--yellow);">
+              <span class="era-card-era">2021&ndash;Present</span>
+              <h4 class="era-card-title">Neubrutalism</h4>
+            </div>
+            <dl class="era-card-body">
+              <dt>Domain</dt>
+              <dd>Digital product &amp; marketing UI. Boldness plus modern UI structure.</dd>
+              <dt>Visual signature</dt>
+              <dd>Thick outlines, hard shadows, flat high-contrast color, oversized type.</dd>
+              <dt>Usability stance</dt>
+              <dd>Usually pro-UX in navigation clarity, pro-impact in visuals.</dd>
+              <dt>Execution</dt>
+              <dd>Design systems, UI kits, templates, standardized tokens.</dd>
+              <dt>Intent</dt>
+              <dd>Commercial differentiation. Personality at scale.</dd>
+            </dl>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         SECTION 2: VISUAL DNA / ANATOMY
+         ============================================================ -->
+    <section id="anatomy" class="bg-warm" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">02 &mdash; Visual DNA</span>
+        <h2 class="mb-md">The Anatomy of Neubrutalism</h2>
+        <p class="section-intro mb-2xl">
+          Neubrutalism is not a single "look"&thinsp;&mdash;&thinsp;it's a repeatable <strong>visual grammar</strong> that can be reduced to a small set of tokens and rules. Here's every building block, explained and demonstrated.
+        </p>
+
+        <!-- ---- 2A: COLOR ---- -->
+        <h3 class="mb-md" id="anatomy-color">
+          <span class="badge badge-yellow" style="vertical-align: middle;">A</span>
+          &ensp;Color Theory
+        </h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Neubrutalist color is <strong>categorical, not ambient</strong>. Colors carve surfaces into obvious objects, create instant memory, and heighten the sense that the interface is assembled from discrete parts. No gradients. Flat fills with pop-art energy. A black-and-white structural base punctuated by one to three saturated accents.
+        </p>
+
+        <h4 class="mb-md">A Canonical Neubrutalist Palette</h4>
+        <div class="swatch-grid mb-lg">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #000;"></div>
+            <div class="swatch-info"><div class="swatch-name">Black</div><div class="swatch-hex">#000000</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FFFDF5;"></div>
+            <div class="swatch-info"><div class="swatch-name">Off-White</div><div class="swatch-hex">#FFFDF5</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FFD23F;"></div>
+            <div class="swatch-info"><div class="swatch-name">Bold Yellow</div><div class="swatch-hex">#FFD23F</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FF6B6B;"></div>
+            <div class="swatch-info"><div class="swatch-name">Coral Pink</div><div class="swatch-hex">#FF6B6B</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #74B9FF;"></div>
+            <div class="swatch-info"><div class="swatch-name">Sky Blue</div><div class="swatch-hex">#74B9FF</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #88D498;"></div>
+            <div class="swatch-info"><div class="swatch-name">Soft Green</div><div class="swatch-hex">#88D498</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #FFA552;"></div>
+            <div class="swatch-info"><div class="swatch-name">Orange</div><div class="swatch-hex">#FFA552</div></div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #B8A9FA;"></div>
+            <div class="swatch-info"><div class="swatch-name">Lavender</div><div class="swatch-hex">#B8A9FA</div></div>
+          </div>
+        </div>
+
+        <div class="do-dont mb-2xl">
+          <div class="do-box">
+            <h4>Do</h4>
+            <ul>
+              <li>Use a structurally simple palette even when it's visually loud</li>
+              <li>One neutral base + one dark outline color + limited accents</li>
+              <li>Ensure body text has <strong>4.5:1</strong> contrast ratio (WCAG AA)</li>
+              <li>Use color to carve surfaces into discrete, identifiable objects</li>
+            </ul>
+          </div>
+          <div class="dont-box">
+            <h4>Don't</h4>
+            <ul>
+              <li>Use gradients (flat fills are the grammar)</li>
+              <li>Let every component compete at maximum saturation</li>
+              <li>Mistake "loud" for accessible&thinsp;&mdash;&thinsp;yellow on white fails contrast</li>
+              <li>Rely on color alone to convey state or meaning</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- ---- 2B: BORDERS ---- -->
+        <h3 class="mb-md" id="anatomy-borders">
+          <span class="badge badge-pink" style="vertical-align: middle;">B</span>
+          &ensp;Geometry &amp; Borders
+        </h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          The signature neubrutalist move is the <strong>heavy outline</strong>. Cards, buttons, inputs, and illustrations read as if stamped, boxed, or screen-printed. The border is both brand signal and structural language&thinsp;&mdash;&thinsp;it restores edge clarity in an era of soft cards and low-contrast surfaces.
+        </p>
+
+        <h4 class="mb-md">Corner Radius Comparison</h4>
+        <div class="border-demos mb-lg">
+          <div class="border-demo">
+            <div class="border-demo-box border-rounded"></div>
+            <div class="border-demo-label">border-radius: 12px<br><em>SaaS default</em></div>
+          </div>
+          <div class="border-demo">
+            <div class="border-demo-box border-pill"></div>
+            <div class="border-demo-label">border-radius: 999px<br><em>Pill shape</em></div>
+          </div>
+          <div class="border-demo">
+            <div class="border-demo-box border-square" style="box-shadow: var(--shadow); background: var(--yellow);"></div>
+            <div class="border-demo-label"><strong>border-radius: 0</strong><br><em>Neubrutalist</em></div>
+          </div>
+        </div>
+
+        <div class="card card-flat bg-white mb-2xl" style="border: var(--border); max-width: 600px;">
+          <h4 class="card-header">Production Rule</h4>
+          <p>Use a <strong>single canonical stroke width</strong> for most components (e.g., 2&ndash;3px). Only deviate intentionally for hierarchy. In code, border-width becomes a design token. Prefer square or near-square corners. The outline should clarify the object, not overpower its content.</p>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- ---- 2C: SHADOWS ---- -->
+        <h3 class="mb-md" id="anatomy-shadows">
+          <span class="badge badge-blue" style="vertical-align: middle;">C</span>
+          &ensp;Shadows &amp; Depth
+        </h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Neubrutalist depth is <strong>anti-naturalistic</strong>. Instead of blurred, atmospheric elevation, it uses hard, offset shadows with little or no blur. Elements feel stacked, shifted, or physically misregistered&thinsp;&mdash;&thinsp;like printed layers that don't fully align.
+        </p>
+
+        <h4 class="mb-md">Shadow Comparison</h4>
+        <div class="shadow-demos mb-lg">
+          <div class="shadow-demo">
+            <div class="shadow-demo-box shadow-none"></div>
+            <div class="shadow-demo-label">No shadow<br><code>box-shadow: none</code></div>
+          </div>
+          <div class="shadow-demo">
+            <div class="shadow-demo-box shadow-soft"></div>
+            <div class="shadow-demo-label">Soft (Material)<br><code>0 4px 12px rgba(0,0,0,.15)</code></div>
+          </div>
+          <div class="shadow-demo">
+            <div class="shadow-demo-box shadow-neu" style="background: var(--yellow);"></div>
+            <div class="shadow-demo-label"><strong>Hard offset</strong><br><code>5px 5px 0 0 #000</code></div>
+          </div>
+          <div class="shadow-demo">
+            <div class="shadow-demo-box shadow-large" style="background: var(--pink);"></div>
+            <div class="shadow-demo-label"><strong>Large offset</strong><br><code>10px 10px 0 0 #000</code></div>
+          </div>
+        </div>
+
+        <div class="pullquote" style="background: var(--blue-light);">
+          Hard-shadow depth can create strong affordance and clickable energy&thinsp;&mdash;&thinsp;but only if the z-axis remains predictable. When every card, chip, button, and tooltip gets equally aggressive shadow, hierarchy collapses.
+        </div>
+
+        <div class="mt-lg mb-2xl">
+          <h4 class="mb-sm">The Three-Tier Shadow System</h4>
+          <div class="overflow-x-auto">
+            <table class="token-table" style="max-width: 700px;">
+              <thead>
+                <tr><th>Tier</th><th>Use Case</th><th>CSS Value</th></tr>
+              </thead>
+              <tbody>
+                <tr><td><span class="badge badge-green">Small</span></td><td>Badges, chips, inline actions</td><td><code>3px 3px 0 0 #000</code></td></tr>
+                <tr><td><span class="badge badge-yellow">Medium</span></td><td>Cards, buttons, panels</td><td><code>5px 5px 0 0 #000</code></td></tr>
+                <tr><td><span class="badge badge-pink">Large</span></td><td>Overlays, hero elements, focus states</td><td><code>8px 8px 0 0 #000</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- ---- 2D: TYPOGRAPHY ---- -->
+        <h3 class="mb-md" id="anatomy-type">
+          <span class="badge badge-green" style="vertical-align: middle;">D</span>
+          &ensp;Typography
+        </h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Neubrutalist typography is <strong>assertive contrast</strong>: oversized sans-serif display headlines, abrupt scale shifts, and occasional tension elements. The best implementations separate expressive display type from calm operational body copy.
+        </p>
+
+        <!-- Display specimen -->
+        <div class="type-specimen mb-lg">
+          <div class="type-specimen-header">Display &mdash; Syne 800</div>
+          <div class="type-specimen-body">
+            <div class="display" style="font-size: clamp(2.5rem, 6vw, 5rem); line-height: 1;">
+              The interface should declare its presence.
+            </div>
+          </div>
+        </div>
+
+        <!-- Heading specimen -->
+        <div class="type-specimen mb-lg">
+          <div class="type-specimen-header">Heading &mdash; Space Grotesk 700</div>
+          <div class="type-specimen-body">
+            <div style="font-family: var(--font-heading); font-weight: 700; font-size: clamp(1.5rem, 3vw, 2.5rem); line-height: 1.2;">
+              Borders, shadows, type, and flat color create a grammar that's repeatable, teachable, and commercially viable.
+            </div>
+          </div>
+        </div>
+
+        <!-- Body specimen -->
+        <div class="type-specimen mb-lg">
+          <div class="type-specimen-header">Body &mdash; Inter 400</div>
+          <div class="type-specimen-body">
+            <p style="font-size: 1.125rem; line-height: 1.7; max-width: 600px;">
+              Body text in neubrutalism should be boring on purpose. People primarily scan web content rather than reading it linearly. Calm paragraph text and predictable spacing are what make the bold gestures sustainable. Reserve your most extreme typographic moves for headlines, hero modules, and calls to action.
+            </p>
+          </div>
+        </div>
+
+        <!-- Mono specimen -->
+        <div class="type-specimen mb-lg">
+          <div class="type-specimen-header">Mono &mdash; Space Mono 400</div>
+          <div class="type-specimen-body">
+            <div style="font-family: var(--font-mono); font-size: 0.95rem; line-height: 1.6;">
+              border: 3px solid #000;<br>
+              box-shadow: 5px 5px 0 0 #000;<br>
+              border-radius: 0;<br>
+              background: #FFD23F;
+            </div>
+          </div>
+        </div>
+
+        <div class="do-dont mb-2xl">
+          <div class="do-box">
+            <h4>Do</h4>
+            <ul>
+              <li>Use <strong>impact face</strong> for headlines: grotesque/display sans, high weight, tight tracking</li>
+              <li>Use <strong>utility face</strong> for body: highly legible sans, generous line-height</li>
+              <li>Reserve extreme typographic gestures for headlines and CTAs</li>
+              <li>Contrast via scale and weight, not novelty letterforms</li>
+            </ul>
+          </div>
+          <div class="dont-box">
+            <h4>Don't</h4>
+            <ul>
+              <li>Make the entire typographic system shout at the same volume</li>
+              <li>Use ornate or decorative fonts&thinsp;&mdash;&thinsp;the style is "loud" in scale, not letterform</li>
+              <li>Sacrifice body readability for aesthetic consistency</li>
+              <li>Ignore line-height and spacing in pursuit of impact</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- ---- 2E: LAYOUT ---- -->
+        <h3 class="mb-md" id="anatomy-layout">
+          <span class="badge badge-orange" style="vertical-align: middle;">E</span>
+          &ensp;Layout
+        </h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Neubrutalist layouts appear "broken" but the good ones are not random. They use underlying grids and then selectively disrupt them through offset modules, asymmetric spacing, and overscaled elements. The operative rule: <mark>broken but not random</mark>.
+        </p>
+
+        <div class="grid grid-2 mb-lg" style="gap: var(--space-lg);">
+          <div class="card" style="background: var(--yellow-light);">
+            <h4 class="card-header">Structured Disruption</h4>
+            <p>Keep navigation and core reading flows predictable. Allow local "breaks"&thinsp;&mdash;&thinsp;offset cards, overlapped panels, rotated elements&thinsp;&mdash;&thinsp;to create energy. Users tolerate expressive composition far more readily than expressive forms.</p>
+          </div>
+          <div class="card" style="background: var(--pink-light);">
+            <h4 class="card-header">Macro vs. Micro</h4>
+            <p>Use asymmetry at the <strong>macro</strong> level (heroes, card stacks, illustrations). Keep the <strong>micro</strong> level mechanically aligned (labels, fields, buttons, error states). Once disruption interferes with comprehension, the design crosses from expression into sabotage.</p>
+          </div>
+        </div>
+
+        <div class="pullquote" style="background: var(--green-light);">
+          First-wave web brutalism weaponized disorder. Neubrutalism choreographs it. The layout should feel slightly misbehaved while preserving scan paths, grouping logic, and a stable reading order.
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         SECTION 3: THE TYPE SYSTEM
+         ============================================================ -->
+    <section id="typography" class="bg-white" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">03 &mdash; The Type System</span>
+        <h2 class="mb-md">Fonts for Neubrutalism</h2>
+        <p class="section-intro mb-2xl">
+          Typography is neubrutalism's primary graphic device. The right pairing doesn't just carry content&thinsp;&mdash;&thinsp;it <em>is</em> the visual punch. Here are the typefaces that define the movement, organized by role. All freely available on Google Fonts.
+        </p>
+
+        <!-- Display Fonts -->
+        <h3 class="mb-md"><span class="badge badge-yellow" style="vertical-align: middle;">Role</span>&ensp;Display</h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Your poster fonts. Oversized headlines, hero statements, brand-defining moments. High weight, tight tracking, maximum impact.
+        </p>
+
+        <div class="type-card mb-lg">
+          <div class="type-card-header">
+            <h4>Syne</h4>
+            <span class="badge badge-yellow">Used on this site</span>
+          </div>
+          <div class="type-card-specimen" style="font-family: 'Syne', sans-serif; font-weight: 800;">
+            <div class="type-card-sample">The interface declares its presence.</div>
+            <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 !@#$%&amp;</div>
+          </div>
+          <div class="type-card-meta">
+            <span><strong>Weights:</strong> 400&ndash;800</span>
+            <span><strong>Style:</strong> Quirky grotesque</span>
+            <span><strong>Why:</strong> Assertive geometry with just enough character to feel designed, not generic</span>
+          </div>
+        </div>
+
+        <div class="type-card mb-lg">
+          <div class="type-card-header">
+            <h4>Bebas Neue</h4>
+          </div>
+          <div class="type-card-specimen" style="font-family: 'Bebas Neue', sans-serif; font-weight: 400;">
+            <div class="type-card-sample" style="text-transform: uppercase;">Bold structure. Raw energy. Zero apology.</div>
+            <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 !@#$%&amp;</div>
+          </div>
+          <div class="type-card-meta">
+            <span><strong>Weights:</strong> 400 (single)</span>
+            <span><strong>Style:</strong> Condensed display</span>
+            <span><strong>Why:</strong> Pure poster energy. Narrow, impossible to ignore. Classic brutalist choice.</span>
+          </div>
+        </div>
+
+        <div class="type-card mb-2xl">
+          <div class="type-card-header">
+            <h4>Archivo Black</h4>
+          </div>
+          <div class="type-card-specimen" style="font-family: 'Archivo Black', sans-serif; font-weight: 400;">
+            <div class="type-card-sample">No ornament. Just weight.</div>
+            <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 !@#$%&amp;</div>
+          </div>
+          <div class="type-card-meta">
+            <span><strong>Weights:</strong> 400 (single)</span>
+            <span><strong>Style:</strong> Heavy grotesque</span>
+            <span><strong>Why:</strong> Maximum typographic weight. When you need a headline that physically dominates the page.</span>
+          </div>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- Heading Fonts -->
+        <h3 class="mb-md"><span class="badge badge-pink" style="vertical-align: middle;">Role</span>&ensp;Heading</h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Section headers, card titles, navigation. Readable at medium sizes with enough personality to carry the brand voice.
+        </p>
+
+        <div class="grid grid-3 mb-2xl" style="gap: var(--space-lg);">
+          <div class="type-card">
+            <div class="type-card-header">
+              <h4>Space Grotesk</h4>
+              <span class="badge badge-yellow">Used on this site</span>
+            </div>
+            <div class="type-card-specimen" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700;">
+              <div class="type-card-sample">Structure meets personality.</div>
+              <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div>
+            </div>
+            <div class="type-card-meta">
+              <span><strong>Weights:</strong> 300&ndash;700</span>
+              <span><strong>Style:</strong> Geometric sans with quirk</span>
+            </div>
+          </div>
+
+          <div class="type-card">
+            <div class="type-card-header">
+              <h4>Plus Jakarta Sans</h4>
+            </div>
+            <div class="type-card-specimen" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700;">
+              <div class="type-card-sample">Clean warmth for modern UI.</div>
+              <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div>
+            </div>
+            <div class="type-card-meta">
+              <span><strong>Weights:</strong> 200&ndash;800</span>
+              <span><strong>Style:</strong> Modern geometric</span>
+            </div>
+          </div>
+
+          <div class="type-card">
+            <div class="type-card-header">
+              <h4>Outfit</h4>
+            </div>
+            <div class="type-card-specimen" style="font-family: 'Outfit', sans-serif; font-weight: 700;">
+              <div class="type-card-sample">Geometric precision, zero fuss.</div>
+              <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div>
+            </div>
+            <div class="type-card-meta">
+              <span><strong>Weights:</strong> 100&ndash;900</span>
+              <span><strong>Style:</strong> Round geometric</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- Body Fonts -->
+        <h3 class="mb-md"><span class="badge badge-blue" style="vertical-align: middle;">Role</span>&ensp;Body</h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          The calm counterweight. Body text should be boring on purpose&thinsp;&mdash;&thinsp;generous line-height, conventional sizes, predictable spacing. This is what makes the bold gestures sustainable.
+        </p>
+
+        <div class="grid grid-2 mb-2xl" style="gap: var(--space-lg);">
+          <div class="type-card">
+            <div class="type-card-header">
+              <h4>Inter</h4>
+              <span class="badge badge-yellow">Used on this site</span>
+            </div>
+            <div class="type-card-specimen" style="font-family: 'Inter', sans-serif; font-weight: 400;">
+              <div class="type-card-sample" style="font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.7;">People primarily scan web content rather than reading it linearly. Calm paragraph text and predictable spacing are what make the bold gestures sustainable.</div>
+            </div>
+            <div class="type-card-meta">
+              <span><strong>Weights:</strong> 100&ndash;900</span>
+              <span><strong>Why:</strong> Designed for screens. The industry-standard utility face.</span>
+            </div>
+          </div>
+
+          <div class="type-card">
+            <div class="type-card-header">
+              <h4>DM Sans</h4>
+            </div>
+            <div class="type-card-specimen" style="font-family: 'DM Sans', sans-serif; font-weight: 400;">
+              <div class="type-card-sample" style="font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.7;">Slightly more geometric personality than Inter while remaining perfectly readable at paragraph sizes. A versatile all-rounder.</div>
+            </div>
+            <div class="type-card-meta">
+              <span><strong>Weights:</strong> 100&ndash;1000</span>
+              <span><strong>Why:</strong> Warmer than Inter with more character. Works from body to bold headings.</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- Monospace Fonts -->
+        <h3 class="mb-md"><span class="badge badge-green" style="vertical-align: middle;">Role</span>&ensp;Monospace</h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Code blocks, labels, tokens, meta information. Monospace faces reinforce the "exposed structure" philosophy&thinsp;&mdash;&thinsp;they make the interface feel engineered.
+        </p>
+
+        <div class="grid grid-2 mb-2xl" style="gap: var(--space-lg);">
+          <div class="type-card">
+            <div class="type-card-header">
+              <h4>Space Mono</h4>
+              <span class="badge badge-yellow">Used on this site</span>
+            </div>
+            <div class="type-card-specimen" style="font-family: 'Space Mono', monospace; font-weight: 400;">
+              <div class="type-card-sample" style="font-size: clamp(0.9rem, 2vw, 1.1rem);">border: 3px solid #000;<br>box-shadow: 5px 5px 0 0 #000;</div>
+              <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 {}[]()&lt;&gt;;:'"</div>
+            </div>
+            <div class="type-card-meta">
+              <span><strong>Weights:</strong> 400, 700</span>
+              <span><strong>Why:</strong> Geometric, brutalist character. Feels mechanical and deliberate.</span>
+            </div>
+          </div>
+
+          <div class="type-card">
+            <div class="type-card-header">
+              <h4>JetBrains Mono</h4>
+            </div>
+            <div class="type-card-specimen" style="font-family: 'JetBrains Mono', monospace; font-weight: 400;">
+              <div class="type-card-sample" style="font-size: clamp(0.9rem, 2vw, 1.1rem);">--shadow: 5px 5px 0 0 #000;<br>border-radius: 0;</div>
+              <div class="type-card-alphabet">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 {}[]()&lt;&gt;;:'"</div>
+            </div>
+            <div class="type-card-meta">
+              <span><strong>Weights:</strong> 100&ndash;800</span>
+              <span><strong>Why:</strong> Developer favorite. Excellent legibility. Built-in ligatures.</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="divider-thin mb-2xl">
+
+        <!-- Recommended Pairings -->
+        <h3 class="mb-md">Recommended Pairings</h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          Three curated font stacks that nail the neubrutalist voice. Each pairs an impact display face, a structural heading face, a calm body face, and an engineered mono.
+        </p>
+
+        <div class="grid grid-3 mb-lg">
+          <div class="pairing-card">
+            <div class="pairing-card-header">
+              Pairing 1 <span class="badge badge-yellow" style="margin-left: 0.5rem;">This site</span>
+            </div>
+            <div class="pairing-card-body">
+              <div class="pairing-tier" style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.75rem; line-height: 1.1;">Syne 800</div>
+              <div class="pairing-tier" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem;">Space Grotesk 700</div>
+              <div class="pairing-tier" style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.95rem; line-height: 1.6; color: #444;">Inter 400 for body copy that stays calm while everything else shouts.</div>
+              <div class="pairing-tier" style="font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #666;">Space Mono: --tokens</div>
+            </div>
+          </div>
+
+          <div class="pairing-card">
+            <div class="pairing-card-header">Pairing 2</div>
+            <div class="pairing-card-body">
+              <div class="pairing-tier" style="font-family: 'Bebas Neue', sans-serif; font-weight: 400; font-size: 1.75rem; line-height: 1.1; text-transform: uppercase;">Bebas Neue</div>
+              <div class="pairing-tier" style="font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 1.1rem;">Plus Jakarta Sans 700</div>
+              <div class="pairing-tier" style="font-family: 'DM Sans', sans-serif; font-weight: 400; font-size: 0.95rem; line-height: 1.6; color: #444;">DM Sans 400 pairs beautifully with condensed display type. Warm and readable.</div>
+              <div class="pairing-tier" style="font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #666;">JetBrains Mono: code</div>
+            </div>
+          </div>
+
+          <div class="pairing-card">
+            <div class="pairing-card-header">Pairing 3</div>
+            <div class="pairing-card-body">
+              <div class="pairing-tier" style="font-family: 'Archivo Black', sans-serif; font-weight: 400; font-size: 1.75rem; line-height: 1.1;">Archivo Black</div>
+              <div class="pairing-tier" style="font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.1rem;">Outfit 700</div>
+              <div class="pairing-tier" style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: 0.95rem; line-height: 1.6; color: #444;">Inter 400 provides maximum contrast against the heaviest possible display face.</div>
+              <div class="pairing-tier" style="font-family: 'Space Mono', monospace; font-size: 0.8rem; color: #666;">Space Mono: labels</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pullquote">
+          The best neubrutalist type systems reserve their most extreme gestures for headlines, hero modules, and calls to action. Everything else should be conventionally readable. The contrast between loud display and calm body IS the typographic trick.
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         SECTION 4: HISTORY / TIMELINE
+         ============================================================ -->
+    <section id="history" class="bg-warm" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">04 &mdash; History</span>
+        <h2 class="mb-md">From Concrete to CSS</h2>
+        <p class="section-intro mb-2xl">
+          Neubrutalism didn't appear from nowhere. It's the latest node in a design lineage that runs from postwar architecture through radical anti-design, web brutalism, and the platform economy that made the style remixable at scale.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--bg-warm);"></div>
+            <div class="timeline-date">1950s&ndash;1960s</div>
+            <h4 class="timeline-title">New Brutalism in Architecture</h4>
+            <p class="timeline-text">
+              Reyner Banham formulates the core ideas in 1955: memorability as an image, clear exhibition of structure, and valuation of material "as found." The Smithsons coin "New Brutalism." B&eacute;ton brut. Raw concrete. Structural honesty. This is where the word comes from&thinsp;&mdash;&thinsp;not from "brutal" as in cruel, but from the French for raw concrete.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--purple);"></div>
+            <div class="timeline-date">1960s&ndash;1980s</div>
+            <h4 class="timeline-title">Radical Anti-Design &amp; Memphis</h4>
+            <p class="timeline-text">
+              Italian groups like Archizoom and Superstudio, followed by the Memphis Group, challenge rationalist restraint with provocation, bright color, exaggeration, and deliberate friction. Neubrutalism's digital personality owes as much to this anti-modernist theatricality as it does to concrete architecture.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--blue);"></div>
+            <div class="timeline-date">2014&ndash;2016</div>
+            <h4 class="timeline-title">Web Brutalism Is Named</h4>
+            <p class="timeline-text">
+              Pascal Deville launches Brutalist Websites in 2014, curating and codifying the trend. By 2016, major commentary frames web brutalism as pushback against the "lightness, optimism, and frivolity" of polished startup aesthetics. Bloomberg's stark redesign becomes Exhibit A. The seeds are planted.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--green);"></div>
+            <div class="timeline-date">2019&ndash;2021</div>
+            <h4 class="timeline-title">The Platform Infrastructure Matures</h4>
+            <p class="timeline-text">
+              Figma Community launches, enabling remixable design files. Tailwind CSS matures with JIT mode in 2021, making arbitrary shadow/border values trivial. Webflow and Framer collapse design-to-deployment. The distribution rails for a style like neubrutalism are now in place.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--yellow);"></div>
+            <div class="timeline-date">2021&ndash;2023</div>
+            <h4 class="timeline-title">Neubrutalism Crystallizes</h4>
+            <p class="timeline-text">
+              The term becomes visibly common on Dribbble, Figma freebies, and UI kit marketplaces. By April 2022, UX educators are publishing neubrutalism tutorials. By early 2023, Figma-linked UI kits make it teachable. By mid-2023, WhiteUI's "Bruddle" packages it as a purchasable SaaS design system. The style crosses from aesthetic mood to reproducible asset class.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--orange);"></div>
+            <div class="timeline-date">2024&ndash;Present</div>
+            <h4 class="timeline-title">Infrastructure &amp; Mainstreaming</h4>
+            <p class="timeline-text">
+              Webflow has dedicated "Neobrutalism" categories. GitHub hosts open-source neubrutalist component libraries. Framer's marketplace has thousands of tagged templates. The style is no longer a visual fad&thinsp;&mdash;&thinsp;it's a taxonomy, a template market, and a developer ecosystem.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-2xl">
+          <h3 class="mb-md">The "Patient Zero" Problem</h3>
+          <div class="card" style="max-width: 720px; background: var(--orange-light);">
+            <p>
+              There is <strong>no single, universally accepted originator</strong>. The public record shows distributed emergence: roughly simultaneous circulation across Dribbble shots, Behance challenges, Figma community assets, and template marketplaces. That makes neubrutalism look less like a founder-led movement and more like <mark>a style crystallized by platforms</mark>.
+            </p>
+            <p class="mt-sm">
+              The most defensible "patient zero moments" are not singular origins but auditable inflection points: explicit-tag Dribbble work in 2022, challenge-based circulation in late 2022, kit-ification via Figma in early 2023, and marketplace codification by mid-2023.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-2xl">
+          <h3 class="mb-md">The Figma Effect</h3>
+          <p style="max-width: 720px;">
+            Figma's importance was not that it invented neubrutalism. Its importance was that it turned a look into a <strong>remix economy</strong>. Designers could inspect and copy live component files, not just see screenshots. Variables and tokenization made the style parameterized&thinsp;&mdash;&thinsp;you could change <code>--border-width</code> and <code>--shadow-offset</code> and get a different flavor of the same grammar. Framer and Webflow completed the loop from moodboard to production.
+          </p>
+          <p class="mt-sm" style="max-width: 720px;">
+            This is the deep historical shift: first-wave web brutalism was anti-system. <strong>Neubrutalism became system-friendly.</strong> It spread precisely because it became easier to reproduce.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         STATS STRIP
+         ============================================================ -->
+    <div class="bg-yellow" style="border-bottom: var(--border-thick); padding: var(--space-xl) 0;">
+      <div class="container">
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-number">2022</div>
+            <div class="stat-label">Year term crystallized</div>
+          </div>
+          <div class="stat-card" style="background: var(--pink);">
+            <div class="stat-number">0px</div>
+            <div class="stat-label">Ideal border-radius</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">4.5:1</div>
+            <div class="stat-label">Min contrast (WCAG AA)</div>
+          </div>
+          <div class="stat-card" style="background: var(--cyan);">
+            <div class="stat-number">0</div>
+            <div class="stat-label">Blur on hard shadows</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         SECTION 4: IMPLEMENTATION / CODE
+         ============================================================ -->
+    <section id="implementation" class="bg-white" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">05 &mdash; Implementation</span>
+        <h2 class="mb-md">Building with Neubrutalism</h2>
+        <p class="section-intro mb-2xl">
+          One of the reasons neubrutalism spread so fast is that its grammar is <strong>simple, discrete, and component-friendly</strong>. Borders, square corners, offset shadows, and loud fills are trivial to express in CSS. Here's how.
+        </p>
+
+        <!-- Design Tokens -->
+        <h3 class="mb-lg">The Token System</h3>
+        <p class="mb-md" style="max-width: 720px;">
+          The entire style can be compressed into a handful of CSS custom properties. This is what makes it parameterized and themeable&thinsp;&mdash;&thinsp;change the tokens, change the flavor.
+        </p>
+
+        <div class="code-label">CSS</div>
+        <div class="code-block mb-2xl">
+<span class="selector">:root</span> {<br>
+&nbsp;&nbsp;<span class="comment">/* The border is the main structural signifier */</span><br>
+&nbsp;&nbsp;<span class="property">--border</span>: <span class="value">3px solid #000</span>;<br>
+<br>
+&nbsp;&nbsp;<span class="comment">/* Hard shadows: offset, zero blur, always */</span><br>
+&nbsp;&nbsp;<span class="property">--shadow-sm</span>: <span class="value">3px 3px 0 0 #000</span>;<br>
+&nbsp;&nbsp;<span class="property">--shadow</span>: <span class="value">5px 5px 0 0 #000</span>;<br>
+&nbsp;&nbsp;<span class="property">--shadow-lg</span>: <span class="value">8px 8px 0 0 #000</span>;<br>
+<br>
+&nbsp;&nbsp;<span class="comment">/* Square corners. That's the point. */</span><br>
+&nbsp;&nbsp;<span class="property">--radius</span>: <span class="value">0</span>;<br>
+<br>
+&nbsp;&nbsp;<span class="comment">/* Palette: neutral base + loud accents */</span><br>
+&nbsp;&nbsp;<span class="property">--bg</span>: <span class="value">#FFFDF5</span>;<br>
+&nbsp;&nbsp;<span class="property">--yellow</span>: <span class="value">#FFD23F</span>;<br>
+&nbsp;&nbsp;<span class="property">--pink</span>: <span class="value">#FF6B6B</span>;<br>
+&nbsp;&nbsp;<span class="property">--blue</span>: <span class="value">#74B9FF</span>;<br>
+}
+        </div>
+
+        <!-- Button Pattern -->
+        <h3 class="mb-lg">The Canonical Button</h3>
+        <div class="grid grid-2 mb-2xl" style="gap: var(--space-xl);">
+          <div>
+            <div class="code-label">CSS</div>
+            <div class="code-block">
+<span class="selector">.btn</span> {<br>
+&nbsp;&nbsp;<span class="property">border</span>: <span class="value">3px solid #000</span>;<br>
+&nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">0</span>;<br>
+&nbsp;&nbsp;<span class="property">background</span>: <span class="value">#FFD23F</span>;<br>
+&nbsp;&nbsp;<span class="property">color</span>: <span class="value">#000</span>;<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">5px 5px 0 0 #000</span>;<br>
+&nbsp;&nbsp;<span class="property">font-weight</span>: <span class="value">700</span>;<br>
+&nbsp;&nbsp;<span class="property">padding</span>: <span class="value">12px 24px</span>;<br>
+&nbsp;&nbsp;<span class="property">cursor</span>: <span class="value">pointer</span>;<br>
+&nbsp;&nbsp;<span class="property">transition</span>: <span class="value">all 0.1s ease</span>;<br>
+}<br>
+<br>
+<span class="selector">.btn:hover</span> {<br>
+&nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translate(-2px, -2px)</span>;<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">7px 7px 0 0 #000</span>;<br>
+}<br>
+<br>
+<span class="selector">.btn:active</span> {<br>
+&nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translate(3px, 3px)</span>;<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">none</span>;<br>
+}<br>
+<br>
+<span class="comment">/* Never forget focus */</span><br>
+<span class="selector">.btn:focus-visible</span> {<br>
+&nbsp;&nbsp;<span class="property">outline</span>: <span class="value">3px solid #74B9FF</span>;<br>
+&nbsp;&nbsp;<span class="property">outline-offset</span>: <span class="value">3px</span>;<br>
+}
+            </div>
+          </div>
+          <div>
+            <p class="mb-md">The pattern is always the same: <strong>border + flat fill + hard shadow</strong>. On hover, the shadow grows and the element lifts. On click/active, the element "presses down" by moving in the shadow direction and the shadow disappears. It's physical, immediate, satisfying.</p>
+
+            <h4 class="mb-md">Live Demo</h4>
+            <div class="demo-box">
+              <div class="demo-label">Hover and click these:</div>
+              <div class="button-playground">
+                <button class="btn-demo btn-demo-default">Default</button>
+                <button class="btn-demo btn-demo-yellow">Primary</button>
+                <button class="btn-demo btn-demo-dark">Inverted</button>
+                <button class="btn-demo btn-demo-outline">Ghost</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card Pattern -->
+        <h3 class="mb-lg">The Canonical Card</h3>
+        <div class="mb-md">
+          <div class="code-label">CSS</div>
+          <div class="code-block" style="max-width: 600px;">
+<span class="selector">.card</span> {<br>
+&nbsp;&nbsp;<span class="property">background</span>: <span class="value">#fff</span>;<br>
+&nbsp;&nbsp;<span class="property">border</span>: <span class="value">3px solid #000</span>;<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">5px 5px 0 0 #000</span>;<br>
+&nbsp;&nbsp;<span class="property">padding</span>: <span class="value">1.5rem</span>;<br>
+&nbsp;&nbsp;<span class="property">transition</span>: <span class="value">transform 0.15s, box-shadow 0.15s</span>;<br>
+}<br>
+<br>
+<span class="selector">.card:hover</span> {<br>
+&nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translate(-2px, -2px)</span>;<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">7px 7px 0 0 #000</span>;<br>
+}
+          </div>
+        </div>
+
+        <h4 class="mb-md">Card Variations</h4>
+        <div class="card-demo-grid mb-2xl">
+          <div class="card-demo card-demo-1">
+            <h5>Standard Card</h5>
+            <p>Black border, black shadow. The workhorse. Works on any background.</p>
+            <div class="mt-sm"><span class="badge">Default</span></div>
+          </div>
+          <div class="card-demo card-demo-2">
+            <h5>Colored Shadow</h5>
+            <p>Matching border and shadow color adds personality while keeping structure.</p>
+            <div class="mt-sm"><span class="badge badge-pink">Accent</span></div>
+          </div>
+          <div class="card-demo card-demo-3">
+            <h5>Filled Card</h5>
+            <p>Loud background fill. The border and shadow contain the energy. Great for CTAs.</p>
+            <div class="mt-sm"><span class="badge badge-yellow">Highlight</span></div>
+          </div>
+        </div>
+
+        <!-- Interactive Playground -->
+        <h3 class="mb-lg">Interactive Playground</h3>
+        <p class="mb-md" style="max-width: 720px;">
+          Drag the sliders to <em>feel</em> the grammar. Watch how border weight, shadow depth, and corner radius transform a simple card from minimal to maximally neubrutalist.
+        </p>
+
+        <div class="playground mb-2xl">
+          <div class="playground-preview">
+            <div class="playground-card" id="playground-card">
+              <h5>Live Preview</h5>
+              <p>This card updates in real time as you adjust the controls.</p>
+              <button class="playground-btn" id="playground-btn" type="button">Click me</button>
+            </div>
+          </div>
+          <div class="playground-controls">
+            <label>
+              <span>Border Width</span>
+              <input type="range" min="0" max="8" value="3" id="ctrl-border">
+              <output id="out-border">3px</output>
+            </label>
+            <label>
+              <span>Shadow Offset</span>
+              <input type="range" min="0" max="20" value="5" id="ctrl-shadow">
+              <output id="out-shadow">5px</output>
+            </label>
+            <label>
+              <span>Border Radius</span>
+              <input type="range" min="0" max="32" value="0" id="ctrl-radius">
+              <output id="out-radius">0px</output>
+            </label>
+            <div>
+              <span style="font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: #555;">Background</span>
+              <div class="playground-colors">
+                <button type="button" data-color="#ffffff" class="active" style="background: #ffffff;" aria-label="White"></button>
+                <button type="button" data-color="#FFD23F" style="background: #FFD23F;" aria-label="Yellow"></button>
+                <button type="button" data-color="#FF6B6B" style="background: #FF6B6B;" aria-label="Pink"></button>
+                <button type="button" data-color="#74B9FF" style="background: #74B9FF;" aria-label="Blue"></button>
+                <button type="button" data-color="#88D498" style="background: #88D498;" aria-label="Green"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Full Token Reference -->
+        <h3 class="mb-lg">Full Token Reference</h3>
+        <div class="overflow-x-auto mb-lg">
+          <table class="token-table">
+            <thead>
+              <tr><th>Token</th><th>Value</th><th>Purpose</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--border</code></td><td><code>3px solid #000</code></td><td>Default component border</td></tr>
+              <tr><td><code>--border-thin</code></td><td><code>2px solid #000</code></td><td>Secondary borders, dividers</td></tr>
+              <tr><td><code>--border-thick</code></td><td><code>4px solid #000</code></td><td>Section dividers, hero elements</td></tr>
+              <tr><td><code>--shadow-sm</code></td><td><code>3px 3px 0 0 #000</code></td><td>Badges, chips, small controls</td></tr>
+              <tr><td><code>--shadow</code></td><td><code>5px 5px 0 0 #000</code></td><td>Cards, buttons, panels</td></tr>
+              <tr><td><code>--shadow-lg</code></td><td><code>8px 8px 0 0 #000</code></td><td>Hover states, overlays</td></tr>
+              <tr><td><code>--shadow-xl</code></td><td><code>12px 12px 0 0 #000</code></td><td>Hero elements, dialogs</td></tr>
+              <tr><td><code>--radius</code></td><td><code>0</code></td><td>All components</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card" style="max-width: 720px; background: var(--purple-light);">
+          <h4 class="card-header">Why It Translates So Well to Code</h4>
+          <p>
+            CSS natively exposes the exact primitives the style relies on: <code>box-shadow</code> defines offset and blur; <code>border-radius</code> controls softness; <code>border</code>, color, and typography remain explicit rather than atmospheric. In Tailwind, this maps to <code>border border-black rounded-none shadow-[5px_5px_0_0_#000]</code>&thinsp;&mdash;&thinsp;the utility model makes neubrutalism unnaturally easy to author.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         SECTION 5: WHEN TO USE IT (UX / SECTORS)
+         ============================================================ -->
+    <section id="usage" class="bg-warm" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">06 &mdash; Usage Guide</span>
+        <h2 class="mb-md">When to Use Neubrutalism (And When Not To)</h2>
+        <p class="section-intro mb-lg">
+          Neubrutalism's central UX tension is straightforward: it gains distinctiveness by violating expectations, but usability depends on reliably managing them. The more an interface emphasizes collision and visual noise, the more carefully it must protect hierarchy, affordance, and reading order.
+        </p>
+
+        <div class="pullquote mb-2xl">
+          Neubrutalism is strongest as a brand-acquisition and differentiation layer. It is weakest as a trust and default layer. It performs best when hero sections are expressive but core product flows become calmer.
+        </div>
+
+        <!-- Sector Cards -->
+        <h3 class="mb-lg">Sector Fit Analysis</h3>
+
+        <h4 class="mb-md" style="color: var(--green);">Where it works best</h4>
+        <div class="grid grid-3 mb-xl">
+          <div class="sector-card sector-good">
+            <div class="sector-card-header">Creator &amp; Portfolio Sites</div>
+            <div class="sector-card-body">
+              <p>Audiences value personality, novelty, and expressive branding. Simple top-of-funnel journeys where first impressions matter most.</p>
+            </div>
+          </div>
+          <div class="sector-card sector-good">
+            <div class="sector-card-header">SaaS Landing Pages</div>
+            <div class="sector-card-body">
+              <p>Differentiation from years of flat, gradient-light, near-identical startup pages. A cheap visual moat shipped fast with modern tooling.</p>
+            </div>
+          </div>
+          <div class="sector-card sector-good">
+            <div class="sector-card-header">Web3 &amp; Crypto</div>
+            <div class="sector-card-body">
+              <p>Anti-establishment signaling, attention economics, and hype-friendly energy. The early public evidence is dense with wallet and NFT concepts.</p>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="mb-md" style="color: var(--orange);">Use with caution</h4>
+        <div class="grid grid-3 mb-xl">
+          <div class="sector-card sector-ok">
+            <div class="sector-card-header">E-commerce</div>
+            <div class="sector-card-body">
+              <p>Works for brand marketing pages. Scale back for cart, checkout, and account management where cognitive load is already high.</p>
+            </div>
+          </div>
+          <div class="sector-card sector-ok">
+            <div class="sector-card-header">Editorial &amp; Media</div>
+            <div class="sector-card-body">
+              <p>Great for mastheads and article heroes. But dense reading layouts need calmer treatment to preserve scan paths.</p>
+            </div>
+          </div>
+          <div class="sector-card sector-ok">
+            <div class="sector-card-header">Product Dashboards</div>
+            <div class="sector-card-body">
+              <p>Use neubrutalist tokens for brand accent. But information-dense panels, tables, and settings need conventional interaction patterns.</p>
+            </div>
+          </div>
+        </div>
+
+        <h4 class="mb-md" style="color: var(--pink);">Avoid or heavily moderate</h4>
+        <div class="grid grid-3 mb-2xl">
+          <div class="sector-card sector-bad">
+            <div class="sector-card-header">Banking &amp; Insurance</div>
+            <div class="sector-card-body">
+              <p>Trust must be signaled through calm, conventional professionalism. Loud palettes and aggressive borders can read as unserious.</p>
+            </div>
+          </div>
+          <div class="sector-card sector-bad">
+            <div class="sector-card-header">Healthcare</div>
+            <div class="sector-card-body">
+              <p>High-stakes clarity is non-negotiable. Visual friction can cause real anxiety. Every accessibility failure matters more here.</p>
+            </div>
+          </div>
+          <div class="sector-card sector-bad">
+            <div class="sector-card-header">Government Services</div>
+            <div class="sector-card-body">
+              <p>Accessibility compliance is mandatory. Universal usability outweighs personality. The audience is everyone, not a self-selected niche.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accessibility -->
+        <h3 class="mb-lg">Accessibility: Where the Style Helps and Where It Breaks</h3>
+
+        <div class="grid grid-2 mb-lg" style="gap: var(--space-xl);">
+          <div>
+            <h4 class="mb-md" style="color: var(--green);">Potential Strengths</h4>
+            <ul style="padding-left: 1.25rem;">
+              <li class="mb-sm">Large headings and strong edge definition support scanning</li>
+              <li class="mb-sm">Clear borders improve control discoverability vs. ultra-flat UI</li>
+              <li class="mb-sm">High-contrast palette <em>can</em> exceed WCAG thresholds naturally</li>
+              <li class="mb-sm">Hard shadows make interactive elements feel obviously clickable</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="mb-md" style="color: var(--pink);">Common Failure Modes</h4>
+            <ul style="padding-left: 1.25rem;">
+              <li class="mb-sm"><strong>Contrast failures:</strong> Yellow on white, pink on orange, mid-tones all fail WCAG</li>
+              <li class="mb-sm"><strong>Color-only state:</strong> Using only color to convey meaning violates 1.4.1</li>
+              <li class="mb-sm"><strong>Fake hit areas:</strong> Thick borders imply larger targets than actual code provides</li>
+              <li class="mb-sm"><strong>Focus obscured:</strong> Decorative shadows can hide keyboard focus indicators</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto mb-lg">
+          <table class="token-table">
+            <thead>
+              <tr><th>WCAG Criterion</th><th>Requirement</th><th>Neubrutalist Concern</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1.4.3 Contrast (Minimum)</td>
+                <td>4.5:1 for normal text, 3:1 for large text</td>
+                <td>Loud palettes don't guarantee compliance. Test every combination.</td>
+              </tr>
+              <tr>
+                <td>1.4.11 Non-text Contrast</td>
+                <td>3:1 for UI component boundaries</td>
+                <td>Decorative borders can obscure meaningful state changes.</td>
+              </tr>
+              <tr>
+                <td>2.4.7 Focus Visible</td>
+                <td>Keyboard focus clearly indicated</td>
+                <td>Thick outlines must not swallow focus rings. Use <code>outline-offset</code>.</td>
+              </tr>
+              <tr>
+                <td>2.5.8 Target Size</td>
+                <td>24&times;24px minimum (AA)</td>
+                <td>Visual bulk from borders ≠ actual clickable area. Verify padding.</td>
+              </tr>
+              <tr>
+                <td>1.4.1 Use of Color</td>
+                <td>Color not sole information channel</td>
+                <td>Palette experimentation increases risk of color-only signaling.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Best Practices -->
+        <h3 class="mb-lg">Implementation Best Practices</h3>
+
+        <div class="cheat-grid">
+          <div class="cheat-item">
+            <h4>Separate Expression from Interaction</h4>
+            <p>Use neubrutalism aggressively on hero sections, marketing blocks, and editorial modules. Dial it down inside dashboards, forms, and transactional flows.</p>
+          </div>
+          <div class="cheat-item">
+            <h4>Tokenize the Aesthetic</h4>
+            <p>Define explicit tokens for stroke widths, shadow offsets, and accent colors. Change the variables, change the intensity&thinsp;&mdash;&thinsp;without rebuilding components.</p>
+          </div>
+          <div class="cheat-item">
+            <h4>Make "Loud" Serve Hierarchy</h4>
+            <p>Let backgrounds be weird but keep type systematic and readable. If every object is loud, nothing is legible.</p>
+          </div>
+          <div class="cheat-item">
+            <h4>Prove WCAG Compliance Early</h4>
+            <p>Neubrutalism's palette freedom is where projects fail. Enforce contrast ratios during design, not after launch.</p>
+          </div>
+          <div class="cheat-item">
+            <h4>Treat Borders as Semantics</h4>
+            <p>A border should communicate: container, interactive, focus, selected, or error. If it doesn't communicate any of these, remove it.</p>
+          </div>
+          <div class="cheat-item">
+            <h4>Reserve Harshest Gestures</h4>
+            <p>One bold border system. One hard-shadow behavior. One loud display scale. The style deteriorates when every component tries to be the poster.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         SECTION 6: ECOSYSTEM
+         ============================================================ -->
+    <section id="ecosystem" class="bg-white" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">07 &mdash; Ecosystem</span>
+        <h2 class="mb-md">The Neubrutalist Ecosystem</h2>
+        <p class="section-intro mb-2xl">
+          Neubrutalism is a distributed movement. There's no single founding figure. Instead, it was crystallized by an ecosystem of platforms, kit-makers, educators, and open-source libraries.
+        </p>
+
+        <!-- Ecosystem Roles -->
+        <h3 class="mb-lg">The Four Layers</h3>
+        <div class="grid grid-2 mb-2xl" style="gap: var(--space-lg);">
+          <div class="ecosystem-card" style="border-left: 6px solid var(--yellow);">
+            <div class="badge badge-yellow">Layer 1</div>
+            <h4>Showcase</h4>
+            <p>Designers whose public shots made the style legible and desirable. Dribbble, Behance, and Awwwards galleries served as the initial circulation layer. ASAD's 2022 "Neobrutalism Landing Page" was one of the earliest explicitly tagged works.</p>
+          </div>
+          <div class="ecosystem-card" style="border-left: 6px solid var(--blue);">
+            <div class="badge badge-blue">Layer 2</div>
+            <h4>Education</h4>
+            <p>People and communities who translated the aesthetic into recipes. UX educators, Behance challenge culture, and tutorial creators like Sepideh Yazdi moved the style from pure inspiration into teachable visual logic.</p>
+          </div>
+          <div class="ecosystem-card" style="border-left: 6px solid var(--pink);">
+            <div class="badge badge-pink">Layer 3</div>
+            <h4>Productization</h4>
+            <p>Kit makers and marketplace sellers. The NBRTLSM UI kit (Figma Community) and WhiteUI's Bruddle kit packaged neubrutalism as reusable infrastructure. That's how a visual trend becomes operationalized.</p>
+          </div>
+          <div class="ecosystem-card" style="border-left: 6px solid var(--green);">
+            <div class="badge badge-green">Layer 4</div>
+            <h4>Implementation</h4>
+            <p>Open-source libraries and developer-facing component systems. Projects like neobrutalism.dev (Tailwind/React) and neubrutalism-css (vanilla CSS) converted the style into installable production code.</p>
+          </div>
+        </div>
+
+        <!-- Key Platforms -->
+        <h3 class="mb-lg">Key Platforms</h3>
+        <div class="grid grid-3 mb-2xl">
+          <div class="card">
+            <h4 class="card-header">Dribbble</h4>
+            <p class="text-sm">Naming, early visual clustering, and trend visibility. By April 2022, shots were explicitly tagged "neobrutalism."</p>
+            <div class="mt-sm"><span class="badge">Discovery</span></div>
+          </div>
+          <div class="card">
+            <h4 class="card-header">Figma Community</h4>
+            <p class="text-sm">Remixability and system diffusion. Live, inspectable component files turned screenshots into copyable infrastructure.</p>
+            <div class="mt-sm"><span class="badge badge-purple">Remix</span></div>
+          </div>
+          <div class="card">
+            <h4 class="card-header">Awwwards / Markets</h4>
+            <p class="text-sm">Packaging the style as purchasable design systems by mid-2023. Commercialization marks maturity.</p>
+            <div class="mt-sm"><span class="badge badge-orange">Commerce</span></div>
+          </div>
+          <div class="card">
+            <h4 class="card-header">Webflow</h4>
+            <p class="text-sm">Dedicated "Neobrutalism" showcase categories. Low-code publication and template circulation at scale.</p>
+            <div class="mt-sm"><span class="badge badge-blue">Deployment</span></div>
+          </div>
+          <div class="card">
+            <h4 class="card-header">Framer</h4>
+            <p class="text-sm">2,000+ responsive templates. Design-and-publish in one place. Made "designed weirdness" shippable without developers.</p>
+            <div class="mt-sm"><span class="badge badge-green">No-Code</span></div>
+          </div>
+          <div class="card">
+            <h4 class="card-header">GitHub / npm</h4>
+            <p class="text-sm">Dedicated topics, libraries, and curated lists. The style crossed from inspiration into installable front-end primitives.</p>
+            <div class="mt-sm"><span class="badge badge-pink">Open Source</span></div>
+          </div>
+        </div>
+
+        <!-- Corporate Adoption -->
+        <h3 class="mb-lg">Notable Brand Adoption</h3>
+        <p class="mb-lg" style="max-width: 720px;">
+          The strongest brand-level adopters have been <strong>challenger brands, creator-economy platforms, and startup-facing products</strong> rather than conservative incumbents. Adoption is typically surface-layer (marketing pages, editorial microsites) rather than deep product UI.
+        </p>
+
+        <div class="grid grid-2" style="gap: var(--space-lg); max-width: 720px;">
+          <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Gumroad</h4>
+            <p class="text-sm">Most widely cited example. Restrained but recognizable neubrutalist web branding. Strong outlines, bold color blocks, clear structure.</p>
+          </div>
+          <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Figma</h4>
+            <p class="text-sm">Influential in normalizing bold, high-contrast, creator-friendly visual language across its own surfaces and community.</p>
+          </div>
+          <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Contra</h4>
+            <p class="text-sm">Commission-free creative network. Brand expression aligns with challenger logic: strong color, overt personality.</p>
+          </div>
+          <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Whop</h4>
+            <p class="text-sm">Internet-native commerce platform. Strong creator and community signals. Anti-corporate by design.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         SECTION 7: FUTURE OUTLOOK
+         ============================================================ -->
+    <section id="future" class="bg-yellow-light" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">08 &mdash; Future</span>
+        <h2 class="mb-md">What Comes Next?</h2>
+        <p class="section-intro mb-2xl">
+          Is neubrutalism a bubble or a durable shift? The honest answer is: both. The maximal form is almost certainly a trend. The underlying grammar is almost certainly permanent.
+        </p>
+
+        <div class="grid grid-2 mb-2xl" style="gap: var(--space-xl);">
+          <div>
+            <h3 class="mb-md">Why It Won't Disappear</h3>
+            <p>
+              Neubrutalism has progressed further into infrastructure than short-lived decorative crazes like glassmorphism. Templates, component libraries, GitHub topics, marketplace kits, and no-code deployment paths give it operational embedding that outlasts pure mood-board fashion.
+            </p>
+            <p class="mt-sm">
+              It's not one optical trick (frosted glass, soft shadows). It's a <strong>compositional stance</strong> that can survive moderation. That makes it easier to absorb into mainstream design systems in diluted form.
+            </p>
+          </div>
+          <div>
+            <h3 class="mb-md">Why It Won't Become Universal</h3>
+            <p>
+              Historically, brutalism in web design has been poorly defined and its more aggressive expressions are polarizing. It's unlikely to replace mainstream enterprise UI conventions. Instead, it becomes a <strong>calibrated brand dial</strong> applied where differentiation matters most.
+            </p>
+            <p class="mt-sm">
+              The most likely future is hybridization: neubrutalist energy on marketing surfaces, calmer interaction models in dense product flows.
+            </p>
+          </div>
+        </div>
+
+        <!-- Competing Movements -->
+        <h3 class="mb-lg">Contrast with Competing Movements</h3>
+        <div class="grid grid-3 mb-2xl">
+          <div class="card" style="background: var(--white);">
+            <h4 class="card-header">vs. Clean Minimal</h4>
+            <p class="text-sm">
+              Minimalism optimizes for calm, efficiency, and universal deployability. It's the better default for dense products and regulated industries. Neubrutalism is not a replacement&thinsp;&mdash;&thinsp;it's an expressive overlay.
+            </p>
+          </div>
+          <div class="card" style="background: var(--white);">
+            <h4 class="card-header">vs. Corporate Memphis</h4>
+            <p class="text-sm">
+              Where Corporate Memphis says "don't worry, we're approachable," neubrutalism says "notice us, we are not generic." It's sharper, less utopian, more confrontational&thinsp;&mdash;&thinsp;design as stance rather than comfort.
+            </p>
+          </div>
+          <div class="card" style="background: var(--white);">
+            <h4 class="card-header">vs. Glassmorphism</h4>
+            <p class="text-sm">
+              Glassmorphism is a single rendering trick (frosted translucency). Neubrutalism is a grammar (stroke, depth, type hierarchy, layout). That makes it more adaptable long-term&thinsp;&mdash;&thinsp;but it will still cycle based on cultural fatigue.
+            </p>
+          </div>
+        </div>
+
+        <div class="pullquote" style="background: var(--white);">
+          The strongest historical reading: neubrutalism is the 2020s domestication of anti-design energy. As a named trend, probably cyclical. As a set of durable interface moves&thinsp;&mdash;&thinsp;hard shadows, assertive borders, sharper hierarchy, less cosmetic polish&thinsp;&mdash;&thinsp;it has already entered the permanent vocabulary of web design.
+        </div>
+
+        <!-- Subtypes -->
+        <h3 class="mt-2xl mb-lg">Emerging Subtypes</h3>
+        <div class="grid grid-2" style="gap: var(--space-lg);">
+          <div class="card" style="background: var(--white);">
+            <div class="badge badge-purple mb-sm">Subtype</div>
+            <h4 class="card-header">Soft Neubrutalism</h4>
+            <p class="text-sm">Keeps the border/shadow grammar but relaxes color intensity and spacing. The most plausible long-term survivor in mainstream product design.</p>
+          </div>
+          <div class="card" style="background: var(--white);">
+            <div class="badge badge-orange mb-sm">Subtype</div>
+            <h4 class="card-header">Memphis Hybrid</h4>
+            <p class="text-sm">Combines hard-outline UI with playful, flat geometric illustration. The rigid frame of neubrutalism paired with cheerful Memphis-derived corporate art.</p>
+          </div>
+          <div class="card" style="background: var(--white);">
+            <div class="badge badge-green mb-sm">Subtype</div>
+            <h4 class="card-header">Component-Library Neubrutalism</h4>
+            <p class="text-sm">The style as code artifact: Tailwind/React ecosystems, shadcn-based systems. The most infrastructurally embedded variant.</p>
+          </div>
+          <div class="card" style="background: var(--white);">
+            <div class="badge badge-blue mb-sm">Subtype</div>
+            <h4 class="card-header">Editorial/Poster Neubrutalism</h4>
+            <p class="text-sm">Art-directed, typographic, more common in agency and portfolio work than in product UI. The most visually ambitious expression.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- ============================================================
+         CHEAT SHEET / QUICK REFERENCE
+         ============================================================ -->
+    <section id="cheatsheet" class="bg-white" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">Quick Reference</span>
+        <h2 class="mb-md">The Neubrutalism Cheat Sheet</h2>
+        <p class="section-intro mb-xl">Everything you need to know in one glance. Copy the CSS, internalize the rules, ship with confidence.</p>
+
+        <div class="cheat-grid mb-2xl">
+          <div class="cheat-item" style="background: var(--yellow-light);">
+            <h4>Border</h4>
+            <div class="cheat-value">3px solid #000</div>
+            <code>border: var(--border);</code>
+          </div>
+          <div class="cheat-item" style="background: var(--pink-light);">
+            <h4>Shadow</h4>
+            <div class="cheat-value">5px 5px 0 0 #000</div>
+            <code>box-shadow: var(--shadow);</code>
+          </div>
+          <div class="cheat-item" style="background: var(--blue-light);">
+            <h4>Corner Radius</h4>
+            <div class="cheat-value">0</div>
+            <code>border-radius: 0;</code>
+          </div>
+          <div class="cheat-item" style="background: var(--green-light);">
+            <h4>Shadow Blur</h4>
+            <div class="cheat-value">0</div>
+            <code>/* Always zero. Always. */</code>
+          </div>
+          <div class="cheat-item" style="background: var(--orange-light);">
+            <h4>Hover</h4>
+            <div class="cheat-value">Lift + grow shadow</div>
+            <code>transform: translate(-2px, -2px);</code>
+          </div>
+          <div class="cheat-item" style="background: var(--purple-light);">
+            <h4>Active/Press</h4>
+            <div class="cheat-value">Press + kill shadow</div>
+            <code>transform: translate(3px, 3px);</code>
+          </div>
+          <div class="cheat-item">
+            <h4>Display Font</h4>
+            <div class="cheat-value" style="font-family: var(--font-display);">Syne 800</div>
+            <code>font-family: 'Syne', sans-serif;</code>
+          </div>
+          <div class="cheat-item">
+            <h4>Heading Font</h4>
+            <div class="cheat-value" style="font-family: var(--font-heading);">Space Grotesk</div>
+            <code>font-family: 'Space Grotesk';</code>
+          </div>
+          <div class="cheat-item">
+            <h4>Body Font</h4>
+            <div class="cheat-value" style="font-family: var(--font-body);">Inter 400</div>
+            <code>font-family: 'Inter', sans-serif;</code>
+          </div>
+          <div class="cheat-item">
+            <h4>Mono Font</h4>
+            <div class="cheat-value" style="font-family: var(--font-mono);">Space Mono</div>
+            <code>font-family: 'Space Mono';</code>
+          </div>
+          <div class="cheat-item">
+            <h4>Color: Base</h4>
+            <div class="cheat-value">#000 on #FFFDF5</div>
+            <code>Contrast ratio: 18.5:1</code>
+          </div>
+          <div class="cheat-item">
+            <h4>Min Contrast</h4>
+            <div class="cheat-value">4.5 : 1</div>
+            <code>/* WCAG AA for normal text */</code>
+          </div>
+        </div>
+
+        <div class="card" style="background: var(--yellow); max-width: 720px;">
+          <h4 class="card-header">The One Rule</h4>
+          <p style="font-size: 1.25rem; font-family: var(--font-heading); line-height: 1.4;">
+            <strong>Start with a standard UX skeleton, then wrap it in neubrutalist tokens.</strong> Use conventional navigation, predictable information architecture, and clear system-status feedback before applying visual aggression. Neubrutalism is a <em>theme layer on top of a conventional interaction model</em>, not permission to abandon interaction standards.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <!-- Contribute Banner -->
+  <div class="bg-yellow" style="border-bottom: var(--border-thick); padding: var(--space-xl) 0;">
+    <div class="container" style="text-align: center;">
+      <h3 class="mb-sm">This is an open community resource.</h3>
+      <p class="mb-lg" style="max-width: 560px; margin-left: auto; margin-right: auto;">Found an error? Have deeper knowledge on a topic? Want to add a section? This site lives on GitHub and pull requests are welcome.</p>
+      <a href="https://github.com/neubrutalism/neubrutalism.com" class="btn btn-primary" rel="noopener">Contribute on GitHub</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">NEUBRUTALISM<span style="color: var(--pink);">.</span></div>
+          <p style="max-width: 400px; color: #aaa; font-size: 0.95rem;">
+            The authoritative reference on neubrutalist web design. History, anatomy, code, accessibility, and implementation&thinsp;&mdash;&thinsp;on a page that practices what it preaches.
+          </p>
+        </div>
+        <div>
+          <h4>Sections</h4>
+          <ul>
+            <li><a href="#definition">Definition</a></li>
+            <li><a href="#anatomy">Visual DNA</a></li>
+            <li><a href="#typography">Fonts</a></li>
+            <li><a href="#history">History</a></li>
+            <li><a href="#implementation">Code</a></li>
+            <li><a href="#usage">Usage Guide</a></li>
+            <li><a href="#ecosystem">Ecosystem</a></li>
+            <li><a href="#future">Future</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contribute</h4>
+          <ul>
+            <li><a href="https://github.com/neubrutalism/neubrutalism.com" rel="noopener">GitHub Repo</a></li>
+            <li><a href="https://github.com/neubrutalism/neubrutalism.com/issues" rel="noopener">Report an Issue</a></li>
+            <li><a href="https://github.com/neubrutalism/neubrutalism.com/pulls" rel="noopener">Submit a PR</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="https://www.neobrutalism.dev/" rel="noopener">neobrutalism.dev</a></li>
+            <li><a href="https://webflow.com/made-in-webflow/neobrutalism" rel="noopener">Webflow Showcase</a></li>
+            <li><a href="https://www.w3.org/TR/WCAG22/" rel="noopener">WCAG 2.2</a></li>
+            <li><a href="https://blog.logrocket.com/ux-design/neubrutalism-web-design/" rel="noopener">LogRocket Guide</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2025 neubrutalism.com &mdash; Built with vanilla HTML, CSS &amp; JS. No frameworks. No build step. <a href="https://github.com/neubrutalism/neubrutalism.com" rel="noopener">Open source.</a></span>
+        <span>border: 3px solid #000; box-shadow: 5px 5px 0 0 #000;</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    'use strict';
+
+    /* ---- Mobile Menu Toggle ---- */
+    var menuBtn = document.querySelector('.mobile-menu-toggle');
+    var navLinks = document.getElementById('nav-links');
+
+    menuBtn.addEventListener('click', function () {
+      var expanded = menuBtn.getAttribute('aria-expanded') === 'true';
+      menuBtn.setAttribute('aria-expanded', String(!expanded));
+      navLinks.classList.toggle('is-open');
+      menuBtn.textContent = expanded ? 'MENU' : 'CLOSE';
+    });
+
+    navLinks.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        navLinks.classList.remove('is-open');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        menuBtn.textContent = 'MENU';
+      });
+    });
+
+    /* ---- Scrollspy (IntersectionObserver) ---- */
+    var sections = document.querySelectorAll('section[id]');
+    var navItems = document.querySelectorAll('.nav-links a');
+
+    var spyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.getAttribute('id');
+          navItems.forEach(function (item) {
+            if (item.getAttribute('href') === '#' + id) {
+              item.classList.add('active');
+            } else {
+              item.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(function (s) { spyObserver.observe(s); });
+
+    /* ---- Nav Scroll Shadow ---- */
+    var nav = document.querySelector('.nav');
+
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('is-scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* ---- Hero Parallax / 3D Tilt ---- */
+    var hero = document.querySelector('.hero');
+    var heroCards = document.querySelectorAll('.hero-card');
+    var baseTransforms = [
+      'rotate(-3deg)',
+      'rotate(2deg) translateX(-30px)',
+      'rotate(-1deg) translateX(10px)'
+    ];
+
+    if (heroCards.length > 0
+        && window.matchMedia('(min-width: 1025px)').matches
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+
+      hero.addEventListener('mousemove', function (e) {
+        var rect = hero.getBoundingClientRect();
+        var x = (e.clientX - rect.left) / rect.width - 0.5;
+        var y = (e.clientY - rect.top) / rect.height - 0.5;
+
+        heroCards.forEach(function (card, i) {
+          var depth = (i + 1) * 18;
+          var tiltX = y * -(i + 1) * 5;
+          var tiltY = x * (i + 1) * 5;
+          requestAnimationFrame(function () {
+            card.style.transform = baseTransforms[i]
+              + ' translate(' + (x * depth) + 'px, ' + (y * depth) + 'px)'
+              + ' rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg)';
+          });
+        });
+      });
+
+      hero.addEventListener('mouseleave', function () {
+        heroCards.forEach(function (card, i) {
+          card.style.transform = baseTransforms[i];
+        });
+      });
+    }
+
+    /* ---- Interactive Playground ---- */
+    var pgCard = document.getElementById('playground-card');
+    var pgBtn = document.getElementById('playground-btn');
+
+    if (pgCard) {
+      var ctrls = {
+        border: document.getElementById('ctrl-border'),
+        shadow: document.getElementById('ctrl-shadow'),
+        radius: document.getElementById('ctrl-radius')
+      };
+      var outs = {
+        border: document.getElementById('out-border'),
+        shadow: document.getElementById('out-shadow'),
+        radius: document.getElementById('out-radius')
+      };
+
+      function updatePlayground() {
+        var bw = ctrls.border.value;
+        var sh = ctrls.shadow.value;
+        var ra = ctrls.radius.value;
+
+        pgCard.style.borderWidth = bw + 'px';
+        pgCard.style.boxShadow = sh + 'px ' + sh + 'px 0 0 #000';
+        pgCard.style.borderRadius = ra + 'px';
+
+        var btnBw = Math.max(1, Math.round(bw * 0.66));
+        var btnSh = Math.round(sh * 0.6);
+        pgBtn.style.borderWidth = btnBw + 'px';
+        pgBtn.style.boxShadow = btnSh + 'px ' + btnSh + 'px 0 0 #000';
+        pgBtn.style.borderRadius = ra + 'px';
+
+        outs.border.textContent = bw + 'px';
+        outs.shadow.textContent = sh + 'px';
+        outs.radius.textContent = ra + 'px';
+      }
+
+      Object.keys(ctrls).forEach(function (key) {
+        ctrls[key].addEventListener('input', updatePlayground);
+      });
+
+      document.querySelectorAll('.playground-colors button').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          document.querySelectorAll('.playground-colors button').forEach(function (b) {
+            b.classList.remove('active');
+          });
+          btn.classList.add('active');
+          pgCard.style.background = btn.dataset.color;
+        });
+      });
+    }
+
+  })();
+  </script>
+
+</body>
+</html>
