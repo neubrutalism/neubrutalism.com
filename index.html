@@ -43,7 +43,7 @@
         "description": "The authoritative reference on Neubrutalism in web design covering history, visual anatomy, code patterns, UX best practices, and implementation guide.",
         "url": "https://neubrutalism.com/",
         "datePublished": "2025-03-10",
-        "dateModified": "2025-03-10",
+        "dateModified": "2026-03-12",
         "image": "https://neubrutalism.com/og-image.jpg",
         "author": {
           "@type": "Organization",
@@ -220,6 +220,11 @@
             <div class="pullquote">
               Neubrutalism is the 2020s domestication of anti-design energy. It borrows brutalism's language of bluntness and exposed structure, borrows postmodern anti-design's appetite for friction and play, and borrows web brutalism's resistance to polished sameness.
             </div>
+
+            <div class="pullquote mt-lg" style="background: var(--blue-light);">
+              A visual-design trend defined by high contrast, blocky layouts, bold colors, thick borders, and 'unpolished' elements&thinsp;&hellip;&thinsp;more colorful and orderly than pure brutalism.
+              <cite>&mdash; Nielsen Norman Group</cite>
+            </div>
           </div>
         </div>
 
@@ -287,6 +292,35 @@
             </dl>
           </div>
 
+        </div>
+
+        <!-- Style Toggle: Before/After -->
+        <h3 class="mt-2xl mb-lg">See the Difference</h3>
+        <p class="mb-md" style="max-width: 720px;">
+          Toggle between standard SaaS styling and neubrutalist styling to see the transformation in real time. Same content, same layout&thinsp;&mdash;&thinsp;radically different personality.
+        </p>
+
+        <div class="style-toggle-demo mb-lg" id="style-toggle-demo">
+          <div class="style-toggle-header">
+            <span>Live Comparison</span>
+            <div class="style-toggle-btns">
+              <button class="style-toggle-btn" id="toggle-saas" type="button">Standard SaaS</button>
+              <button class="style-toggle-btn is-active" id="toggle-neu" type="button">Neubrutalist</button>
+            </div>
+          </div>
+          <div class="style-toggle-body is-neu" id="style-toggle-body">
+            <div class="toggle-preview-card is-neu" id="toggle-card">
+              <div class="tp-badge">New Feature</div>
+              <h5>Collaboration Tools</h5>
+              <p>Real-time editing, comments, and version history for your entire team. Ship faster together.</p>
+              <span class="tp-btn">Get Started</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card card-flat" style="border: var(--border); max-width: 600px;">
+          <h4 class="card-header">What Changed?</h4>
+          <p><code>border-radius: 12px</code> became <code>0</code>. <code>box-shadow: 0 4px 12px rgba()</code> became <code>8px 8px 0 0 #000</code>. <code>border: 1px solid #e2e2e2</code> became <code>3px solid #000</code>. The font got bolder. The badge got louder. Three CSS properties, total personality shift.</p>
         </div>
       </div>
     </section>
@@ -817,7 +851,7 @@
             <div class="timeline-date">1950s&ndash;1960s</div>
             <h4 class="timeline-title">New Brutalism in Architecture</h4>
             <p class="timeline-text">
-              Reyner Banham formulates the core ideas in 1955: memorability as an image, clear exhibition of structure, and valuation of material "as found." The Smithsons coin "New Brutalism." B&eacute;ton brut. Raw concrete. Structural honesty. This is where the word comes from&thinsp;&mdash;&thinsp;not from "brutal" as in cruel, but from the French for raw concrete.
+              In 1950, Swedish architect Hans Asplund coins "nybrutalism" (new brutalism) to describe Villa G&ouml;th in Uppsala. Reyner Banham formalizes the ideas in 1955: memorability as an image, clear exhibition of structure, and valuation of material "as found." The Smithsons champion "New Brutalism" in Britain. B&eacute;ton brut. Raw concrete. Structural honesty. The word comes not from "brutal" as in cruel, but from the French for raw concrete.
             </p>
           </div>
 
@@ -937,6 +971,8 @@
         </p>
 
         <div class="code-label">CSS</div>
+        <div class="code-block-wrap">
+        <button class="code-copy-btn" type="button" data-copy>Copy</button>
         <div class="code-block mb-2xl">
 <span class="selector">:root</span> {<br>
 &nbsp;&nbsp;<span class="comment">/* The border is the main structural signifier */</span><br>
@@ -957,12 +993,15 @@
 &nbsp;&nbsp;<span class="property">--blue</span>: <span class="value">#74B9FF</span>;<br>
 }
         </div>
+        </div>
 
         <!-- Button Pattern -->
         <h3 class="mb-lg">The Canonical Button</h3>
         <div class="grid grid-2 mb-2xl" style="gap: var(--space-xl);">
           <div>
             <div class="code-label">CSS</div>
+            <div class="code-block-wrap">
+            <button class="code-copy-btn" type="button" data-copy>Copy</button>
             <div class="code-block">
 <span class="selector">.btn</span> {<br>
 &nbsp;&nbsp;<span class="property">border</span>: <span class="value">3px solid #000</span>;<br>
@@ -992,6 +1031,7 @@
 &nbsp;&nbsp;<span class="property">outline-offset</span>: <span class="value">3px</span>;<br>
 }
             </div>
+            </div>
           </div>
           <div>
             <p class="mb-md">The pattern is always the same: <strong>border + flat fill + hard shadow</strong>. On hover, the shadow grows and the element lifts. On click/active, the element "presses down" by moving in the shadow direction and the shadow disappears. It's physical, immediate, satisfying.</p>
@@ -1013,7 +1053,9 @@
         <h3 class="mb-lg">The Canonical Card</h3>
         <div class="mb-md">
           <div class="code-label">CSS</div>
-          <div class="code-block" style="max-width: 600px;">
+          <div class="code-block-wrap" style="max-width: 600px;">
+          <button class="code-copy-btn" type="button" data-copy>Copy</button>
+          <div class="code-block">
 <span class="selector">.card</span> {<br>
 &nbsp;&nbsp;<span class="property">background</span>: <span class="value">#fff</span>;<br>
 &nbsp;&nbsp;<span class="property">border</span>: <span class="value">3px solid #000</span>;<br>
@@ -1026,6 +1068,7 @@
 &nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translate(-2px, -2px)</span>;<br>
 &nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">7px 7px 0 0 #000</span>;<br>
 }
+          </div>
           </div>
         </div>
 
@@ -1045,6 +1088,132 @@
             <h5>Filled Card</h5>
             <p>Loud background fill. The border and shadow contain the energy. Great for CTAs.</p>
             <div class="mt-sm"><span class="badge badge-yellow">Highlight</span></div>
+          </div>
+        </div>
+
+        <!-- Form Elements -->
+        <h3 class="mb-lg">Neubrutalist Form Elements</h3>
+        <p class="mb-md" style="max-width: 720px;">
+          Forms are where most design systems fall apart. Here's every standard form control styled with the neubrutalist grammar&thinsp;&mdash;&thinsp;borders, flat fills, hard shadows, zero radius. All fully functional and accessible.
+        </p>
+
+        <div class="demo-box mb-lg">
+          <div class="demo-label">Interactive &mdash; try these controls</div>
+          <div class="form-demo-grid">
+            <div class="form-demo-group">
+              <label class="nb-label" for="demo-input">Text Input</label>
+              <input class="nb-input" type="text" id="demo-input" placeholder="Type something bold...">
+            </div>
+            <div class="form-demo-group">
+              <label class="nb-label" for="demo-email">Email Input</label>
+              <input class="nb-input" type="email" id="demo-email" placeholder="you@neubrutalism.com">
+            </div>
+            <div class="form-demo-group">
+              <label class="nb-label" for="demo-select">Select</label>
+              <select class="nb-select" id="demo-select">
+                <option value="">Choose a shadow size...</option>
+                <option value="sm">Small (3px 3px 0 0 #000)</option>
+                <option value="md">Medium (5px 5px 0 0 #000)</option>
+                <option value="lg">Large (8px 8px 0 0 #000)</option>
+                <option value="xl">Extra Large (12px 12px 0 0 #000)</option>
+              </select>
+            </div>
+            <div class="form-demo-group">
+              <label class="nb-label" for="demo-textarea">Textarea</label>
+              <textarea class="nb-textarea" id="demo-textarea" placeholder="Describe your design system..."></textarea>
+            </div>
+            <div class="form-demo-group">
+              <span class="nb-label">Checkboxes</span>
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <label class="nb-checkbox">
+                  <input type="checkbox" checked>
+                  <span>Thick borders</span>
+                </label>
+                <label class="nb-checkbox">
+                  <input type="checkbox" checked>
+                  <span>Hard shadows</span>
+                </label>
+                <label class="nb-checkbox">
+                  <input type="checkbox">
+                  <span>Border radius (no!)</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-demo-group">
+              <span class="nb-label">Radio Buttons</span>
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <label class="nb-radio">
+                  <input type="radio" name="demo-radio" value="bold" checked>
+                  <span>Bold</span>
+                </label>
+                <label class="nb-radio">
+                  <input type="radio" name="demo-radio" value="bolder">
+                  <span>Bolder</span>
+                </label>
+                <label class="nb-radio">
+                  <input type="radio" name="demo-radio" value="boldest">
+                  <span>Boldest</span>
+                </label>
+              </div>
+            </div>
+            <div class="form-demo-group">
+              <span class="nb-label">Toggle Switches</span>
+              <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                <label class="nb-toggle-label">
+                  <input type="checkbox" checked>
+                  <span class="nb-toggle-track"><span class="nb-toggle-thumb"></span></span>
+                  <span>Dark mode</span>
+                </label>
+                <label class="nb-toggle-label">
+                  <input type="checkbox">
+                  <span class="nb-toggle-track"><span class="nb-toggle-thumb"></span></span>
+                  <span>Gradients (please no)</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="code-label">CSS &mdash; Input Pattern</div>
+        <div class="code-block-wrap">
+          <button class="code-copy-btn" type="button" data-copy>Copy</button>
+          <div class="code-block mb-2xl">
+<span class="selector">.nb-input</span> {<br>
+&nbsp;&nbsp;<span class="property">padding</span>: <span class="value">0.75rem 1rem</span>;<br>
+&nbsp;&nbsp;<span class="property">border</span>: <span class="value">3px solid #000</span>;<br>
+&nbsp;&nbsp;<span class="property">border-radius</span>: <span class="value">0</span>;<br>
+&nbsp;&nbsp;<span class="property">background</span>: <span class="value">#fff</span>;<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">3px 3px 0 0 #000</span>;<br>
+&nbsp;&nbsp;<span class="property">transition</span>: <span class="value">box-shadow 0.15s, transform 0.15s</span>;<br>
+}<br>
+<br>
+<span class="selector">.nb-input:focus</span> {<br>
+&nbsp;&nbsp;<span class="property">outline</span>: <span class="value">3px solid #74B9FF</span>;<br>
+&nbsp;&nbsp;<span class="property">outline-offset</span>: <span class="value">2px</span>;<br>
+&nbsp;&nbsp;<span class="property">box-shadow</span>: <span class="value">5px 5px 0 0 #000</span>;<br>
+&nbsp;&nbsp;<span class="property">transform</span>: <span class="value">translate(-1px, -1px)</span>;<br>
+}
+          </div>
+        </div>
+
+        <!-- Toast / Notification Demo -->
+        <h3 class="mb-lg">Notification Toasts</h3>
+        <p class="mb-md" style="max-width: 720px;">
+          Toasts and alerts are where neubrutalism's bold personality really shines. High-contrast backgrounds, thick borders, and the signature hard shadow make notifications impossible to miss.
+        </p>
+
+        <div class="toast-demo-container mb-2xl" id="toast-demo">
+          <div class="toast-demo-controls">
+            <button class="btn btn-small btn-green" type="button" data-toast="success">Success Toast</button>
+            <button class="btn btn-small btn-pink" type="button" data-toast="error">Error Toast</button>
+            <button class="btn btn-small btn-blue" type="button" data-toast="info">Info Toast</button>
+            <button class="btn btn-small btn-yellow" type="button" data-toast="warning">Warning Toast</button>
+          </div>
+          <div class="toast-demo-area" id="toast-area">
+            <div class="nb-toast nb-toast-success">
+              <span class="nb-toast-icon" aria-hidden="true">&#10003;</span>
+              <span>Click the buttons above to see toasts.</span>
+            </div>
           </div>
         </div>
 
@@ -1265,6 +1434,42 @@
           </table>
         </div>
 
+        <!-- Contrast Checker -->
+        <h3 class="mb-lg">Contrast Checker</h3>
+        <p class="mb-md" style="max-width: 720px;">
+          Neubrutalism's loud palettes don't automatically pass WCAG. Test your color combinations here&thinsp;&mdash;&thinsp;enter any two hex colors and see the contrast ratio instantly.
+        </p>
+
+        <div class="contrast-checker mb-2xl" id="contrast-checker">
+          <div class="contrast-checker-top">
+            <div class="contrast-input-group">
+              <span class="nb-label">Text Color</span>
+              <div class="contrast-color-row">
+                <input type="color" value="#000000" id="cc-text-color" aria-label="Text color picker">
+                <input type="text" value="#000000" id="cc-text-hex" aria-label="Text color hex" maxlength="7">
+              </div>
+            </div>
+            <div class="contrast-input-group">
+              <span class="nb-label">Background</span>
+              <div class="contrast-color-row">
+                <input type="color" value="#FFD23F" id="cc-bg-color" aria-label="Background color picker">
+                <input type="text" value="#FFD23F" id="cc-bg-hex" aria-label="Background color hex" maxlength="7">
+              </div>
+            </div>
+            <div class="contrast-result-area">
+              <div class="contrast-ratio-num" id="cc-ratio">12.6:1</div>
+              <div class="contrast-wcag-badges" id="cc-badges">
+                <span class="badge badge-green" id="cc-aa">AA Pass</span>
+                <span class="badge badge-green" id="cc-aaa">AAA Pass</span>
+                <span class="badge badge-green" id="cc-aa-large">AA Large Pass</span>
+              </div>
+            </div>
+          </div>
+          <div class="contrast-preview-strip" id="cc-preview" style="background: #FFD23F; color: #000000;">
+            The quick brown fox jumps over the lazy dog. 0123456789
+          </div>
+        </div>
+
         <!-- Best Practices -->
         <h3 class="mb-lg">Implementation Best Practices</h3>
 
@@ -1376,22 +1581,36 @@
           The strongest brand-level adopters have been <strong>challenger brands, creator-economy platforms, and startup-facing products</strong> rather than conservative incumbents. Adoption is typically surface-layer (marketing pages, editorial microsites) rather than deep product UI.
         </p>
 
-        <div class="grid grid-2" style="gap: var(--space-lg); max-width: 720px;">
+        <div class="grid grid-3" style="gap: var(--space-lg);">
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
             <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Gumroad</h4>
-            <p class="text-sm">Most widely cited example. Restrained but recognizable neubrutalist web branding. Strong outlines, bold color blocks, clear structure.</p>
+            <p class="text-sm">The poster child. Vibrant pinks, sharp black outlines, and a layout that feels like a digital zine&thinsp;&mdash;&thinsp;ditching the corporate SaaS look entirely.</p>
+            <div class="mt-sm"><span class="badge badge-pink">Creator Economy</span></div>
           </div>
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
             <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Figma</h4>
-            <p class="text-sm">Influential in normalizing bold, high-contrast, creator-friendly visual language across its own surfaces and community.</p>
+            <p class="text-sm">Bold outlines, flat surfaces, vibrant accents, old-school taskbar motifs. Normalized neubrutalist elements in mainstream design tooling.</p>
+            <div class="mt-sm"><span class="badge badge-purple">Design Tools</span></div>
+          </div>
+          <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Panda CSS</h4>
+            <p class="text-sm">CSS-in-JS library with a fully neubrutalist marketing site. Developer tools have been a natural home for the style.</p>
+            <div class="mt-sm"><span class="badge badge-green">Dev Tools</span></div>
           </div>
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
             <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Contra</h4>
             <p class="text-sm">Commission-free creative network. Brand expression aligns with challenger logic: strong color, overt personality.</p>
+            <div class="mt-sm"><span class="badge badge-orange">Freelance</span></div>
           </div>
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
             <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Whop</h4>
             <p class="text-sm">Internet-native commerce platform. Strong creator and community signals. Anti-corporate by design.</p>
+            <div class="mt-sm"><span class="badge badge-yellow">Commerce</span></div>
+          </div>
+          <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Snowball</h4>
+            <p class="text-sm">Investment platform using neubrutalist design to differentiate from the sea of identical fintech UIs. Bold move in a trust-heavy sector.</p>
+            <div class="mt-sm"><span class="badge badge-blue">Fintech</span></div>
           </div>
         </div>
       </div>
@@ -1460,7 +1679,7 @@
 
         <!-- Subtypes -->
         <h3 class="mt-2xl mb-lg">Emerging Subtypes</h3>
-        <div class="grid grid-2" style="gap: var(--space-lg);">
+        <div class="grid grid-3" style="gap: var(--space-lg);">
           <div class="card" style="background: var(--white);">
             <div class="badge badge-purple mb-sm">Subtype</div>
             <h4 class="card-header">Soft Neubrutalism</h4>
@@ -1471,10 +1690,20 @@
             <h4 class="card-header">Memphis Hybrid</h4>
             <p class="text-sm">Combines hard-outline UI with playful, flat geometric illustration. The rigid frame of neubrutalism paired with cheerful Memphis-derived corporate art.</p>
           </div>
+          <div class="card" style="background: var(--white); border-left: 4px solid var(--cyan);">
+            <div class="badge mb-sm" style="background: var(--cyan);">New</div>
+            <h4 class="card-header">Cyber-brutalism</h4>
+            <p class="text-sm">Cyberpunk aesthetics meet raw layouts: glitch art, dark backgrounds, neon accents, monospace type overload. Blade Runner meets structural honesty.</p>
+          </div>
+          <div class="card" style="background: var(--white); border-left: 4px solid var(--pink);">
+            <div class="badge badge-pink mb-sm">New</div>
+            <h4 class="card-header">Cute-alism</h4>
+            <p class="text-sm">Raw brutalist boxes meet neon pinks, sticker graphics, rounded buttons, and emoji accents. Kawaii energy inside a neubrutalist container&thinsp;&mdash;&thinsp;surprisingly popular in 2025.</p>
+          </div>
           <div class="card" style="background: var(--white);">
             <div class="badge badge-green mb-sm">Subtype</div>
             <h4 class="card-header">Component-Library Neubrutalism</h4>
-            <p class="text-sm">The style as code artifact: Tailwind/React ecosystems, shadcn-based systems. The most infrastructurally embedded variant.</p>
+            <p class="text-sm">The style as code artifact: Tailwind/React ecosystems, shadcn-based systems like <a href="https://www.neobrutalism.dev/" rel="noopener">neobrutalism.dev</a> (4.3k stars). The most infrastructurally embedded variant.</p>
           </div>
           <div class="card" style="background: var(--white);">
             <div class="badge badge-blue mb-sm">Subtype</div>
@@ -1616,9 +1845,11 @@
         <div>
           <h4>Resources</h4>
           <ul>
+            <li><a href="https://www.nngroup.com/articles/neobrutalism/" rel="noopener">NN/g Best Practices</a></li>
             <li><a href="https://www.neobrutalism.dev/" rel="noopener">neobrutalism.dev</a></li>
             <li><a href="https://www.w3.org/TR/WCAG22/" rel="noopener">WCAG 2.2</a></li>
             <li><a href="https://blog.logrocket.com/ux-design/neubrutalism-web-design/" rel="noopener">LogRocket Guide</a></li>
+            <li><a href="https://github.com/ComradeAERGO/Awesome-Neobrutalism" rel="noopener">Awesome Neobrutalism</a></li>
           </ul>
         </div>
       </div>
@@ -1768,6 +1999,173 @@
         });
       });
     }
+
+    /* ---- Style Toggle Demo ---- */
+    var toggleSaas = document.getElementById('toggle-saas');
+    var toggleNeu = document.getElementById('toggle-neu');
+    var toggleBody = document.getElementById('style-toggle-body');
+    var toggleCard = document.getElementById('toggle-card');
+
+    if (toggleSaas && toggleNeu) {
+      toggleSaas.addEventListener('click', function () {
+        toggleSaas.classList.add('is-active');
+        toggleNeu.classList.remove('is-active');
+        toggleBody.classList.remove('is-neu');
+        toggleCard.classList.remove('is-neu');
+      });
+
+      toggleNeu.addEventListener('click', function () {
+        toggleNeu.classList.add('is-active');
+        toggleSaas.classList.remove('is-active');
+        toggleBody.classList.add('is-neu');
+        toggleCard.classList.add('is-neu');
+      });
+    }
+
+    /* ---- Toast Demo ---- */
+    var toastArea = document.getElementById('toast-area');
+
+    if (toastArea) {
+      var toastMessages = {
+        success: { icon: '\u2713', text: 'Changes saved successfully.' },
+        error: { icon: '\u2717', text: 'Something went wrong. Try again.' },
+        info: { icon: '\u2139', text: 'New version available.' },
+        warning: { icon: '\u26A0', text: 'Storage almost full (92%).' }
+      };
+
+      document.querySelectorAll('[data-toast]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var type = btn.dataset.toast;
+          var msg = toastMessages[type];
+          var toast = document.createElement('div');
+          toast.className = 'nb-toast nb-toast-' + type;
+          toast.innerHTML = '<span class="nb-toast-icon" aria-hidden="true">' + msg.icon + '</span>'
+            + '<span>' + msg.text + '</span>'
+            + '<button class="nb-toast-dismiss" type="button" aria-label="Dismiss">\u00D7</button>';
+
+          toastArea.innerHTML = '';
+          toastArea.appendChild(toast);
+
+          toast.querySelector('.nb-toast-dismiss').addEventListener('click', function () {
+            toast.classList.add('is-leaving');
+            setTimeout(function () { toast.remove(); }, 250);
+          });
+
+          setTimeout(function () {
+            if (toast.parentNode) {
+              toast.classList.add('is-leaving');
+              setTimeout(function () { toast.remove(); }, 250);
+            }
+          }, 4000);
+        });
+      });
+    }
+
+    /* ---- Contrast Checker ---- */
+    var ccTextColor = document.getElementById('cc-text-color');
+    var ccTextHex = document.getElementById('cc-text-hex');
+    var ccBgColor = document.getElementById('cc-bg-color');
+    var ccBgHex = document.getElementById('cc-bg-hex');
+
+    if (ccTextColor) {
+      function hexToRgb(hex) {
+        hex = hex.replace('#', '');
+        if (hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+        var n = parseInt(hex, 16);
+        return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+      }
+
+      function relativeLuminance(rgb) {
+        var srgb = rgb.map(function (c) {
+          c = c / 255;
+          return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
+        });
+        return 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2];
+      }
+
+      function contrastRatio(hex1, hex2) {
+        var l1 = relativeLuminance(hexToRgb(hex1));
+        var l2 = relativeLuminance(hexToRgb(hex2));
+        var lighter = Math.max(l1, l2);
+        var darker = Math.min(l1, l2);
+        return (lighter + 0.05) / (darker + 0.05);
+      }
+
+      function updateContrast() {
+        var fg = ccTextHex.value;
+        var bg = ccBgHex.value;
+        if (!/^#[0-9a-fA-F]{6}$/.test(fg) || !/^#[0-9a-fA-F]{6}$/.test(bg)) return;
+
+        var ratio = contrastRatio(fg, bg);
+        var ratioStr = ratio.toFixed(1) + ':1';
+
+        document.getElementById('cc-ratio').textContent = ratioStr;
+
+        var aaPass = ratio >= 4.5;
+        var aaaPass = ratio >= 7;
+        var aaLargePass = ratio >= 3;
+
+        var ccAA = document.getElementById('cc-aa');
+        var ccAAA = document.getElementById('cc-aaa');
+        var ccAAL = document.getElementById('cc-aa-large');
+
+        ccAA.textContent = 'AA ' + (aaPass ? 'Pass' : 'Fail');
+        ccAA.className = 'badge ' + (aaPass ? 'badge-green' : 'badge-pink');
+        ccAAA.textContent = 'AAA ' + (aaaPass ? 'Pass' : 'Fail');
+        ccAAA.className = 'badge ' + (aaaPass ? 'badge-green' : 'badge-pink');
+        ccAAL.textContent = 'AA Large ' + (aaLargePass ? 'Pass' : 'Fail');
+        ccAAL.className = 'badge ' + (aaLargePass ? 'badge-green' : 'badge-pink');
+
+        var preview = document.getElementById('cc-preview');
+        preview.style.color = fg;
+        preview.style.background = bg;
+
+        ccTextColor.value = fg;
+        ccBgColor.value = bg;
+      }
+
+      ccTextColor.addEventListener('input', function () {
+        ccTextHex.value = ccTextColor.value.toUpperCase();
+        updateContrast();
+      });
+      ccBgColor.addEventListener('input', function () {
+        ccBgHex.value = ccBgColor.value.toUpperCase();
+        updateContrast();
+      });
+      ccTextHex.addEventListener('input', function () {
+        var v = ccTextHex.value;
+        if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+          ccTextColor.value = v;
+          updateContrast();
+        }
+      });
+      ccBgHex.addEventListener('input', function () {
+        var v = ccBgHex.value;
+        if (/^#[0-9a-fA-F]{6}$/.test(v)) {
+          ccBgColor.value = v;
+          updateContrast();
+        }
+      });
+
+      updateContrast();
+    }
+
+    /* ---- Code Copy Buttons ---- */
+    document.querySelectorAll('.code-copy-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var codeBlock = btn.closest('.code-block-wrap').querySelector('.code-block');
+        if (!codeBlock) return;
+        var text = codeBlock.textContent.replace(/\s+/g, ' ').trim();
+        navigator.clipboard.writeText(text).then(function () {
+          btn.textContent = 'Copied!';
+          btn.classList.add('is-copied');
+          setTimeout(function () {
+            btn.textContent = 'Copy';
+            btn.classList.remove('is-copied');
+          }, 2000);
+        });
+      });
+    });
 
   })();
   </script>
