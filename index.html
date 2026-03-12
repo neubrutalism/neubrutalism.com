@@ -473,17 +473,31 @@
 
         <div class="mt-lg mb-2xl">
           <h4 class="mb-sm">The Three-Tier Shadow System</h4>
-          <div class="overflow-x-auto">
-            <table class="token-table" style="max-width: 700px;">
-              <thead>
-                <tr><th>Tier</th><th>Use Case</th><th>CSS Value</th></tr>
-              </thead>
-              <tbody>
-                <tr><td><span class="badge badge-green">Small</span></td><td>Badges, chips, inline actions</td><td><code>3px 3px 0 0 #000</code></td></tr>
-                <tr><td><span class="badge badge-yellow">Medium</span></td><td>Cards, buttons, panels</td><td><code>5px 5px 0 0 #000</code></td></tr>
-                <tr><td><span class="badge badge-pink">Large</span></td><td>Overlays, hero elements, focus states</td><td><code>8px 8px 0 0 #000</code></td></tr>
-              </tbody>
-            </table>
+          <div class="shadow-demos">
+            <div class="shadow-demo">
+              <div class="shadow-demo-box" style="box-shadow: 3px 3px 0 0 #000; background: var(--green);"></div>
+              <div class="shadow-demo-label">
+                <strong><span class="badge badge-green">Small</span></strong><br>
+                <code>3px 3px 0 0 #000</code><br>
+                <em>Badges, chips, inline actions</em>
+              </div>
+            </div>
+            <div class="shadow-demo">
+              <div class="shadow-demo-box" style="box-shadow: 5px 5px 0 0 #000; background: var(--yellow);"></div>
+              <div class="shadow-demo-label">
+                <strong><span class="badge badge-yellow">Medium</span></strong><br>
+                <code>5px 5px 0 0 #000</code><br>
+                <em>Cards, buttons, panels</em>
+              </div>
+            </div>
+            <div class="shadow-demo">
+              <div class="shadow-demo-box" style="box-shadow: 8px 8px 0 0 #000; background: var(--pink);"></div>
+              <div class="shadow-demo-label">
+                <strong><span class="badge badge-pink">Large</span></strong><br>
+                <code>8px 8px 0 0 #000</code><br>
+                <em>Overlays, hero elements, focus</em>
+              </div>
+            </div>
           </div>
         </div>
 
