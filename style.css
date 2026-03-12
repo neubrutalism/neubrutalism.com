@@ -109,7 +109,7 @@ a:hover {
 
 /* --- CUSTOM CURSOR --- */
 body {
-  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><rect width='14' height='14' x='3' y='3' fill='%23000'/></svg>") 10 10, auto;
+  cursor: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20'><rect width='14' height='14' x='3' y='3' fill='%23000' stroke='%23fff' stroke-width='1'/></svg>") 10 10, auto;
 }
 
 a, button, [role='button'], input[type='range'], .swatch:hover, .card:hover {
