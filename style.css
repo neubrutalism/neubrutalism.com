@@ -1342,13 +1342,13 @@ code {
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-md);
+  gap: var(--space-lg);
 }
 
 .stat-card {
   border: var(--border);
-  box-shadow: var(--shadow);
-  padding: var(--space-md);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-lg) var(--space-md);
   text-align: center;
   background: var(--white);
 }
@@ -1356,17 +1356,17 @@ code {
 .stat-number {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(3rem, 6vw, 5rem);
   line-height: 1;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
 }
 
 .stat-label {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #555;
+  color: #000;
 }
 
 
