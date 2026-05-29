@@ -1,0 +1,9 @@
+# neubrutalism.com — an open reference on neubrutalist web design.
+# Search engines, AI assistants, and researchers are welcome to read,
+# index, cite, and learn from this content.
+
+User-agent: *
+Allow: /
+Content-Signal: search=yes, ai-input=yes, ai-train=yes
+
+Sitemap: https://neubrutalism.com/sitemap.xml

@@ -3,26 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Set theme before paint to avoid flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'dark' && t !== 'light') {
+          t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+
   <title>Neubrutalism — The Definitive Guide to Neubrutalist Web Design</title>
   <meta name="description" content="The authoritative reference on Neubrutalism in web design. History, visual anatomy, code patterns, UX best practices, and implementation guide. A masterclass that exemplifies the style it teaches.">
   <meta name="keywords" content="neubrutalism, neo-brutalism, web design, UI design, neobrutalism, brutalist web design, design trend, CSS, web development">
+
+  <meta name="robots" content="index, follow, max-image-preview:large">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Neubrutalism — The Definitive Guide">
   <meta property="og:description" content="The authoritative reference on Neubrutalist web design. History, anatomy, code, and best practices.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://neubrutalism.com">
+  <meta property="og:url" content="https://neubrutalism.com/">
+  <meta property="og:site_name" content="Neubrutalism.com">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://neubrutalism.com/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="NEUBRUTALISM — the definitive guide. Border 3px solid #000, box-shadow 5px 5px 0 0 #000, border-radius 0.">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Neubrutalism — The Definitive Guide">
   <meta name="twitter:description" content="The authoritative reference on Neubrutalist web design. History, anatomy, code, and best practices.">
-  <meta name="twitter:image" content="https://neubrutalism.com/og-image.jpg">
-  <meta property="og:image" content="https://neubrutalism.com/og-image.jpg">
+  <meta name="twitter:image" content="https://neubrutalism.com/og-image.png">
+  <meta name="twitter:image:alt" content="NEUBRUTALISM — the definitive guide to neubrutalist web design.">
 
   <!-- Canonical & Author -->
   <link rel="canonical" href="https://neubrutalism.com/">
   <meta name="author" content="neubrutalism.com">
+
+  <!-- Icons, theme, manifest -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#FFD23F">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,32 +68,47 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Article",
+        "@type": "WebSite",
+        "@id": "https://neubrutalism.com/#website",
+        "url": "https://neubrutalism.com/",
+        "name": "Neubrutalism.com",
+        "description": "The definitive reference on neubrutalist web design.",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://neubrutalism.com/#org" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://neubrutalism.com/#org",
+        "name": "neubrutalism.com",
+        "url": "https://neubrutalism.com/",
+        "logo": "https://neubrutalism.com/favicon.svg",
+        "knowsAbout": ["Neubrutalism", "Neo-brutalism", "Web design", "UI design", "CSS", "Design history", "Web accessibility", "Brutalist architecture", "Typography"],
+        "sameAs": ["https://github.com/neubrutalism/neubrutalism.com"]
+      },
+      {
+        "@type": ["Article", "TechArticle"],
+        "@id": "https://neubrutalism.com/#article",
         "headline": "Neubrutalism — The Definitive Guide to Neubrutalist Web Design",
         "description": "The authoritative reference on Neubrutalism in web design covering history, visual anatomy, code patterns, UX best practices, and implementation guide.",
         "url": "https://neubrutalism.com/",
         "datePublished": "2025-03-10",
-        "dateModified": "2026-03-12",
-        "image": "https://neubrutalism.com/og-image.jpg",
-        "author": {
-          "@type": "Organization",
-          "name": "neubrutalism.com",
-          "url": "https://neubrutalism.com/"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "neubrutalism.com",
-          "url": "https://neubrutalism.com/"
-        },
-        "mainEntityOfPage": {
-          "@type": "WebPage",
-          "@id": "https://neubrutalism.com/"
-        },
-        "articleSection": ["Web Design", "UI Design", "CSS", "Design History"],
+        "dateModified": "2026-05-29",
+        "image": "https://neubrutalism.com/og-image.png",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "author": { "@id": "https://neubrutalism.com/#org" },
+        "publisher": { "@id": "https://neubrutalism.com/#org" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://neubrutalism.com/" },
+        "articleSection": ["Web Design", "UI Design", "CSS", "Design History", "Accessibility"],
+        "about": [
+          { "@type": "DefinedTerm", "name": "Neubrutalism" },
+          { "@type": "Thing", "name": "Brutalist architecture" }
+        ],
         "keywords": "neubrutalism, neo-brutalism, neobrutalism, web design, UI design, CSS, brutalist web design, design trend"
       },
       {
         "@type": "FAQPage",
+        "@id": "https://neubrutalism.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -83,6 +128,30 @@
           },
           {
             "@type": "Question",
+            "name": "Who coined the term neubrutalism?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There is no single, universally accepted originator. The term emerged across Dribbble, Behance, and Figma communities roughly simultaneously in 2021–2022. Polish designer Michał Malewicz is most credited with naming and popularizing it through his March 2022 essay 'Neubrutalism is taking over the web' (he is also associated with naming neumorphism and glassmorphism), but explicitly tagged work was already circulating concurrently — so he popularized far more than he invented."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is neubrutalism still relevant in 2026?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, though it has matured. The maximal, named trend is past its peak hype and is cyclical, but its underlying techniques — hard offset shadows, thick borders, bold type, high contrast — have been absorbed into mainstream design systems in diluted form. A 2026 accelerant is anti-AI signaling: as AI-generated layouts make polished sameness ubiquitous, visibly hand-built aesthetics read as a human signal, helping the style outlast predictions of its death."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which brands and products use neubrutalism?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Adoption skews toward challenger brands, creator-economy platforms, and developer tools. Verified current examples include Gumroad (Sahil Lavingia's 2021 rebrand), Tony's Chocolonely, Panda CSS, and the neobrutalism.dev component library. Figma was an influential early adopter (about 2019–2023) but dropped its heavy black outlines in a 2024 rebrand. Adoption is typically surface-layer (marketing pages) rather than deep product UI."
+            }
+          },
+          {
+            "@type": "Question",
             "name": "Is Neubrutalism accessible?",
             "acceptedAnswer": {
               "@type": "Answer",
@@ -96,6 +165,41 @@
               "@type": "Answer",
               "text": "The core CSS properties are: border (typically 2-4px solid black), box-shadow with hard offset and zero blur (e.g., 5px 5px 0 0 #000), border-radius of 0 (square corners), flat high-saturation background colors without gradients, and bold font-weight on oversized display typography. These can be tokenized as CSS custom properties for a complete design system."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "What fonts work best for neubrutalism?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Neubrutalist type pairs a loud display face with calm body copy. Common display and heading choices are Syne, Archivo Black, Bebas Neue, Space Grotesk, and Outfit; body text uses highly legible faces like Inter or DM Sans; monospace such as Space Mono or JetBrains Mono reinforces the 'exposed structure' feel. The contrast between an extreme display face and a boring, readable body face is the core typographic trick."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "DefinedTermSet",
+        "@id": "https://neubrutalism.com/#glossary",
+        "name": "Neubrutalism Glossary",
+        "hasDefinedTerm": [
+          {
+            "@type": "DefinedTerm",
+            "name": "Neubrutalism",
+            "description": "A 2020s web/UI design movement using thick black borders, hard offset shadows with zero blur, square corners, flat high-contrast color, and oversized bold type, packaged as a repeatable design-system grammar."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Hard shadow",
+            "description": "A box-shadow with an offset but zero blur radius (e.g. 5px 5px 0 0 #000), producing a flat, stamped, screen-printed sense of depth rather than naturalistic elevation."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Béton brut",
+            "description": "French for 'raw concrete'; the term, associated with Le Corbusier, from which architectural Brutalism takes its name — not the English word 'brutal'."
+          },
+          {
+            "@type": "DefinedTerm",
+            "name": "Web brutalism",
+            "description": "The 2014–2020 digital movement, archived by Pascal Deville's Brutalist Websites, that rejected polished startup web design with raw, anti-conventional layouts. Neubrutalism is its system-friendly successor."
           }
         ]
       }
@@ -107,6 +211,9 @@
 
   <!-- Skip Link -->
   <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Reading progress (decorative) -->
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"></div>
 
   <!-- ============================================================
        NAVIGATION
@@ -124,7 +231,12 @@
         <li><a href="#ecosystem">Ecosystem</a></li>
         <li><a href="#future">Future</a></li>
       </ul>
-      <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">MENU</button>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false">
+          <span class="theme-toggle-icon" aria-hidden="true">&#9790;</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">MENU</button>
+      </div>
     </div>
   </nav>
 
@@ -234,7 +346,7 @@
 
           <!-- Era 1: Architectural -->
           <div class="era-card">
-            <div class="era-card-header" style="background: var(--bg-warm);">
+            <div class="era-card-header" style="background: var(--surface-2);">
               <span class="era-card-era">1950s&ndash;1970s</span>
               <h4 class="era-card-title">Architectural Brutalism</h4>
             </div>
@@ -861,11 +973,11 @@
 
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-dot" style="background: var(--bg-warm);"></div>
+            <div class="timeline-dot" style="background: var(--surface-2);"></div>
             <div class="timeline-date">1950s&ndash;1960s</div>
             <h4 class="timeline-title"><a href="https://en.wikipedia.org/wiki/Brutalist_architecture" target="_blank" rel="noopener">New Brutalism in Architecture</a></h4>
             <p class="timeline-text">
-              In 1950, Swedish architect Hans Asplund coins "nybrutalism" (new brutalism) to describe Villa G&ouml;th in Uppsala. Reyner Banham formalizes the ideas in 1955: memorability as an image, clear exhibition of structure, and valuation of material "as found." The Smithsons champion "New Brutalism" in Britain. B&eacute;ton brut. Raw concrete. Structural honesty. The word comes not from "brutal" as in cruel, but from the French for raw concrete.
+              In 1950, Swedish architect Hans Asplund coins "nybrutalism" (new brutalism) to describe Villa G&ouml;th in Uppsala. Critic Reyner Banham sets out the criteria in his 1955 essay: memorability as an image, clear exhibition of structure, and valuation of material "as found" (he would complicate his own definition in the 1966 book <em>The New Brutalism: Ethic or Aesthetic?</em>). Alison &amp; Peter Smithson champion "New Brutalism" in Britain. The name traces not to "brutal" as in cruel but to Le Corbusier's <em>b&eacute;ton brut</em>&thinsp;&mdash;&thinsp;raw concrete.
             </p>
           </div>
 
@@ -901,7 +1013,7 @@
             <div class="timeline-date">2021&ndash;2023</div>
             <h4 class="timeline-title">Neubrutalism Crystallizes</h4>
             <p class="timeline-text">
-              The term becomes visibly common on Dribbble, Figma freebies, and UI kit marketplaces. By April 2022, UX educators are publishing neubrutalism tutorials. By early 2023, Figma-linked UI kits make it teachable. By mid-2023, WhiteUI's "Bruddle" packages it as a purchasable SaaS design system. The style crosses from aesthetic mood to reproducible asset class.
+              In March 2022, Polish designer <a href="https://uxdesign.cc/neubrutalism-is-taking-over-the-web-e9d09e0fe441" target="_blank" rel="noopener">Michał Malewicz</a> publishes "Neubrutalism is taking over the web" &mdash; the essay most credited with naming and popularizing the trend. Shots tagged "neobrutalism" cluster on Dribbble the same spring. By early 2023, Figma-linked UI kits make it teachable; by mid-2023, WhiteUI's "Bruddle" packages it as a purchasable SaaS design system. The style crosses from aesthetic mood to reproducible asset class.
             </p>
           </div>
 
@@ -920,6 +1032,9 @@
           <div class="card" style="max-width: 720px; background: var(--orange-light);">
             <p>
               There is <strong>no single, universally accepted originator</strong>. The public record shows distributed emergence: roughly simultaneous circulation across Dribbble shots, Behance challenges, Figma community assets, and template marketplaces. That makes neubrutalism look less like a founder-led movement and more like <mark>a style crystallized by platforms</mark>.
+            </p>
+            <p class="mt-sm">
+              The closest thing to a namer is <strong>Michał Malewicz</strong>, whose March 2022 essay gave the trend its label and is widely credited with popularizing it (he's also associated with naming neumorphism and glassmorphism). But explicitly tagged work was already circulating concurrently&thinsp;&mdash;&thinsp;so he popularized far more than he invented.
             </p>
             <p class="mt-sm">
               The most defensible "patient zero moments" are not singular origins but auditable inflection points: explicit-tag Dribbble work in 2022, challenge-based circulation in late 2022, kit-ification via Figma in early 2023, and marketplace codification by mid-2023.
@@ -1448,6 +1563,10 @@
           </table>
         </div>
 
+        <p class="mb-2xl" style="max-width: 720px; font-size: 0.95rem; color: #555;">
+          <strong>Which standard?</strong> These criteria are from <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">WCAG 2.2</a>, the current W3C Recommendation (published October 2023, updated December 2024). WCAG 3.0 is still an early working draft&thinsp;&mdash;&thinsp;not expected to reach Recommendation before roughly 2029, and it will coexist with rather than replace 2.2. Build against 2.2 today.
+        </p>
+
         <!-- Contrast Checker -->
         <h3 class="mb-lg">Contrast Checker</h3>
         <p class="mb-md" style="max-width: 720px;">
@@ -1535,17 +1654,17 @@
           <div class="ecosystem-card" style="border-left: 6px solid var(--yellow);">
             <div class="badge badge-yellow">Layer 1</div>
             <h4>Showcase</h4>
-            <p>Designers whose public shots made the style legible and desirable. Dribbble, Behance, and Awwwards galleries served as the initial circulation layer. ASAD's 2022 "Neobrutalism Landing Page" was one of the earliest explicitly tagged works.</p>
+            <p>Designers whose public shots made the style legible and desirable. Dribbble, Behance, and Awwwards galleries served as the initial circulation layer, with work explicitly tagged "neobrutalism" clustering through the spring of 2022.</p>
           </div>
           <div class="ecosystem-card" style="border-left: 6px solid var(--blue);">
             <div class="badge badge-blue">Layer 2</div>
             <h4>Education</h4>
-            <p>People and communities who translated the aesthetic into recipes. UX educators, Behance challenge culture, and tutorial creators like Sepideh Yazdi moved the style from pure inspiration into teachable visual logic.</p>
+            <p>People and communities who translated the aesthetic into recipes. Michał Malewicz's widely-read March 2022 essay, UX-publication explainers, and Behance challenge culture moved the style from pure inspiration into teachable visual logic.</p>
           </div>
           <div class="ecosystem-card" style="border-left: 6px solid var(--pink);">
             <div class="badge badge-pink">Layer 3</div>
             <h4>Productization</h4>
-            <p>Kit makers and marketplace sellers. The NBRTLSM UI kit (Figma Community) and WhiteUI's Bruddle kit packaged neubrutalism as reusable infrastructure. That's how a visual trend becomes operationalized.</p>
+            <p>Kit makers and marketplace sellers. Dozens of Figma Community kits and WhiteUI's "Bruddle" SaaS kit packaged neubrutalism as reusable infrastructure&thinsp;&mdash;&thinsp;sold on Gumroad, ThemeForest, and Awwwards Market. That's how a visual trend becomes operationalized.</p>
           </div>
           <div class="ecosystem-card" style="border-left: 6px solid var(--green);">
             <div class="badge badge-green">Layer 4</div>
@@ -1592,39 +1711,39 @@
         <!-- Corporate Adoption -->
         <h3 class="mb-lg">Notable Brand Adoption</h3>
         <p class="mb-lg" style="max-width: 720px;">
-          The strongest brand-level adopters have been <strong>challenger brands, creator-economy platforms, and startup-facing products</strong> rather than conservative incumbents. Adoption is typically surface-layer (marketing pages, editorial microsites) rather than deep product UI.
+          The strongest brand-level adopters have been <strong>challenger brands, creator-economy platforms, and developer tools</strong> rather than conservative incumbents. Adoption is typically surface-layer (marketing pages, editorial microsites) rather than deep product UI. Every example below was verified against the brand's live site&thinsp;&mdash;&thinsp;the style fatigues fast, so cite with care.
         </p>
 
         <div class="grid grid-3" style="gap: var(--space-lg);">
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
-            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Gumroad</h4>
-            <p class="text-sm">The poster child. Vibrant pinks, sharp black outlines, and a layout that feels like a digital zine&thinsp;&mdash;&thinsp;ditching the corporate SaaS look entirely.</p>
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;"><a href="https://gumroad.com" target="_blank" rel="noopener">Gumroad</a></h4>
+            <p class="text-sm">The poster child. Sahil Lavingia's 2021 10-year rebrand traded the corporate SaaS look for flat candy fills, sharp black outlines, and hard offset shadows. Still unmistakably neubrutalist today.</p>
             <div class="mt-sm"><span class="badge badge-pink">Creator Economy</span></div>
           </div>
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
-            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Figma</h4>
-            <p class="text-sm">Bold outlines, flat surfaces, vibrant accents, old-school taskbar motifs. Normalized neubrutalist elements in mainstream design tooling.</p>
-            <div class="mt-sm"><span class="badge badge-purple">Design Tools</span></div>
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;"><a href="https://tonyschocolonely.com" target="_blank" rel="noopener">Tony's Chocolonely</a></h4>
+            <p class="text-sm">Proof it scales past tech. Clashing flat color fields, oversized chunky display type, and square-cornered buttons drive a mainstream consumer brand&thinsp;&mdash;&thinsp;loud by design, on purpose.</p>
+            <div class="mt-sm"><span class="badge badge-orange">Consumer / CPG</span></div>
           </div>
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
-            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Panda CSS</h4>
-            <p class="text-sm">CSS-in-JS library with a fully neubrutalist marketing site. Developer tools have been a natural home for the style.</p>
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;"><a href="https://panda-css.com" target="_blank" rel="noopener">Panda CSS</a></h4>
+            <p class="text-sm">CSS-in-JS library with a fully neubrutalist marketing site&thinsp;&mdash;&thinsp;<code>4px 4px 0 0 black</code> shadows and <code>3px solid black</code> borders straight from the production stylesheet. Dev tools are a natural home for the style.</p>
             <div class="mt-sm"><span class="badge badge-green">Dev Tools</span></div>
           </div>
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
-            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Contra</h4>
-            <p class="text-sm">Commission-free creative network. Brand expression aligns with challenger logic: strong color, overt personality.</p>
-            <div class="mt-sm"><span class="badge badge-orange">Freelance</span></div>
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;"><a href="https://www.neobrutalism.dev/" target="_blank" rel="noopener">neobrutalism.dev</a></h4>
+            <p class="text-sm">The canonical component library (5,000+ GitHub stars). A shadcn/ui-based React + Tailwind system whose own docs site is a textbook reference implementation: grid background, thick borders, hard shadows on every control.</p>
+            <div class="mt-sm"><span class="badge badge-blue">Open Source</span></div>
           </div>
           <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
-            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Whop</h4>
-            <p class="text-sm">Internet-native commerce platform. Strong creator and community signals. Anti-corporate by design.</p>
-            <div class="mt-sm"><span class="badge badge-yellow">Commerce</span></div>
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;"><a href="https://dodonut.com" target="_blank" rel="noopener">Dodonut</a></h4>
+            <p class="text-sm">Design-studio portfolio leaning all the way in: black-bordered nav and buttons with hard offset shadows, flat lime and purple fills, oversized type. Agencies use the style as a craft signal.</p>
+            <div class="mt-sm"><span class="badge badge-purple">Agency</span></div>
           </div>
-          <div class="card card-flat" style="border: var(--border); padding: var(--space-md);">
-            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Snowball</h4>
-            <p class="text-sm">Investment platform using neubrutalist design to differentiate from the sea of identical fintech UIs. Bold move in a trust-heavy sector.</p>
-            <div class="mt-sm"><span class="badge badge-blue">Fintech</span></div>
+          <div class="card card-flat" style="border: var(--border); padding: var(--space-md); background: var(--surface-2);">
+            <h4 style="font-family: var(--font-heading); font-weight: 700; font-size: 1rem;">Figma <span class="badge badge-yellow" style="font-size: 0.6rem; vertical-align: middle;">Cautionary</span></h4>
+            <p class="text-sm">An early, influential adopter (~2019&ndash;2023): heavy black outlines and bold flat color. But its <strong>2024 rebrand deliberately dropped</strong> those outlines&thinsp;&mdash;&thinsp;a reminder that even category leaders cycle out of a trend.</p>
+            <div class="mt-sm"><span class="badge">Moved on</span></div>
           </div>
         </div>
       </div>
@@ -1664,22 +1783,31 @@
           </div>
         </div>
 
+        <!-- 2026 Driver: anti-AI signaling -->
+        <div class="card" style="background: var(--black); color: var(--white); max-width: 100%; border-color: var(--black); box-shadow: var(--shadow-lg);">
+          <div class="badge badge-green mb-sm">New driver &mdash; 2026</div>
+          <h3 class="mb-sm" style="color: var(--white);">The Anti-AI Signal</h3>
+          <p style="color: #eee;">
+            A fresh accelerant is keeping the style alive past its predicted peak: as AI-generated layouts flood the web with frictionless, average-of-everything sameness, <strong style="color: var(--yellow);">visibly hand-built aesthetics read as a human signal</strong>. Asymmetry, clashing color, and deliberate roughness are hard to prompt and easy to recognize. Neubrutalism's "made by a person, not a model" energy has become part of its staying power&thinsp;&mdash;&thinsp;design as a mark of authorship.
+          </p>
+        </div>
+
         <!-- Competing Movements -->
-        <h3 class="mb-lg">Contrast with Competing Movements</h3>
+        <h3 class="mt-2xl mb-lg">Contrast with Competing Movements</h3>
         <div class="grid grid-3 mb-2xl">
-          <div class="card" style="background: var(--white);">
+          <div class="card" style="background: var(--surface);">
             <h4 class="card-header">vs. Clean Minimal</h4>
             <p class="text-sm">
               Minimalism optimizes for calm, efficiency, and universal deployability. It's the better default for dense products and regulated industries. Neubrutalism is not a replacement&thinsp;&mdash;&thinsp;it's an expressive overlay.
             </p>
           </div>
-          <div class="card" style="background: var(--white);">
+          <div class="card" style="background: var(--surface);">
             <h4 class="card-header">vs. Corporate Memphis</h4>
             <p class="text-sm">
               Where Corporate Memphis says "don't worry, we're approachable," neubrutalism says "notice us, we are not generic." It's sharper, less utopian, more confrontational&thinsp;&mdash;&thinsp;design as stance rather than comfort.
             </p>
           </div>
-          <div class="card" style="background: var(--white);">
+          <div class="card" style="background: var(--surface);">
             <h4 class="card-header">vs. Glassmorphism</h4>
             <p class="text-sm">
               Glassmorphism is a single rendering trick (frosted translucency). Neubrutalism is a grammar (stroke, depth, type hierarchy, layout). That makes it more adaptable long-term&thinsp;&mdash;&thinsp;but it will still cycle based on cultural fatigue.
@@ -1687,39 +1815,39 @@
           </div>
         </div>
 
-        <div class="pullquote" style="background: var(--white);">
+        <div class="pullquote" style="background: var(--surface);">
           The strongest historical reading: neubrutalism is the 2020s domestication of anti-design energy. As a named trend, probably cyclical. As a set of durable interface moves&thinsp;&mdash;&thinsp;hard shadows, assertive borders, sharper hierarchy, less cosmetic polish&thinsp;&mdash;&thinsp;it has already entered the permanent vocabulary of web design.
         </div>
 
         <!-- Subtypes -->
         <h3 class="mt-2xl mb-lg">Emerging Subtypes</h3>
         <div class="grid grid-3" style="gap: var(--space-lg);">
-          <div class="card" style="background: var(--white);">
+          <div class="card" style="background: var(--surface);">
             <div class="badge badge-purple mb-sm">Subtype</div>
             <h4 class="card-header">Soft Neubrutalism</h4>
             <p class="text-sm">Keeps the border/shadow grammar but relaxes color intensity and spacing. The most plausible long-term survivor in mainstream product design.</p>
           </div>
-          <div class="card" style="background: var(--white);">
+          <div class="card" style="background: var(--surface);">
             <div class="badge badge-orange mb-sm">Subtype</div>
             <h4 class="card-header">Memphis Hybrid</h4>
             <p class="text-sm">Combines hard-outline UI with playful, flat geometric illustration. The rigid frame of neubrutalism paired with cheerful Memphis-derived corporate art.</p>
           </div>
-          <div class="card" style="background: var(--white); border-left: 4px solid var(--cyan);">
+          <div class="card" style="background: var(--surface); border-left: 4px solid var(--cyan);">
             <div class="badge mb-sm" style="background: var(--cyan);">New</div>
             <h4 class="card-header">Cyber-brutalism</h4>
             <p class="text-sm">Cyberpunk aesthetics meet raw layouts: glitch art, dark backgrounds, neon accents, monospace type overload. Blade Runner meets structural honesty.</p>
           </div>
-          <div class="card" style="background: var(--white); border-left: 4px solid var(--pink);">
+          <div class="card" style="background: var(--surface); border-left: 4px solid var(--pink);">
             <div class="badge badge-pink mb-sm">New</div>
             <h4 class="card-header">Cute-alism</h4>
             <p class="text-sm">Raw brutalist boxes meet neon pinks, sticker graphics, rounded buttons, and emoji accents. Kawaii energy inside a neubrutalist container&thinsp;&mdash;&thinsp;surprisingly popular in 2025.</p>
           </div>
-          <div class="card" style="background: var(--white);">
+          <div class="card" style="background: var(--surface);">
             <div class="badge badge-green mb-sm">Subtype</div>
             <h4 class="card-header">Component-Library Neubrutalism</h4>
-            <p class="text-sm">The style as code artifact: Tailwind/React ecosystems, shadcn-based systems like <a href="https://www.neobrutalism.dev/" rel="noopener">neobrutalism.dev</a> (4.3k stars). The most infrastructurally embedded variant.</p>
+            <p class="text-sm">The style as code artifact: Tailwind/React ecosystems, shadcn-based systems like <a href="https://www.neobrutalism.dev/" target="_blank" rel="noopener">neobrutalism.dev</a> (5,000+ stars). The most infrastructurally embedded variant.</p>
           </div>
-          <div class="card" style="background: var(--white);">
+          <div class="card" style="background: var(--surface);">
             <div class="badge badge-blue mb-sm">Subtype</div>
             <h4 class="card-header">Editorial/Poster Neubrutalism</h4>
             <p class="text-sm">Art-directed, typographic, more common in agency and portfolio work than in product UI. The most visually ambitious expression.</p>
@@ -1811,6 +1939,59 @@
       </div>
     </section>
 
+    <hr class="divider-band divider-band-green">
+
+    <!-- ============================================================
+         SOURCES & FURTHER READING
+         ============================================================ -->
+    <section id="sources" class="bg-warm" style="border-bottom: var(--border-thick);">
+      <div class="container">
+        <span class="section-label">Sources</span>
+        <h2 class="mb-md">Sources &amp; Further Reading</h2>
+        <p class="section-intro mb-2xl">
+          This page is a synthesis, not an opinion. Claims here are traceable to primary and authoritative secondary sources&thinsp;&mdash;&thinsp;design history, the W3C, the Nielsen Norman Group, and the people who named and built the style. Verify, disagree, go deeper.
+        </p>
+
+        <div class="grid grid-2" style="gap: var(--space-lg);">
+          <div class="card">
+            <h4 class="card-header">Foundations &amp; History</h4>
+            <ul class="source-list">
+              <li><a href="https://en.wikipedia.org/wiki/Brutalist_architecture" target="_blank" rel="noopener">Brutalist Architecture</a> &mdash; Wikipedia. Asplund's 1950 coinage, Villa Göth, the Smithsons, <em>béton brut</em>.</li>
+              <li>Reyner Banham, <a href="https://www.architectural-review.com/essays/the-new-brutalism-by-reyner-banham" target="_blank" rel="noopener">"The New Brutalism"</a> &mdash; <em>Architectural Review</em>, Dec 1955 (and the 1966 book <em>The New Brutalism: Ethic or Aesthetic?</em>).</li>
+              <li><a href="https://brutalistwebsites.com/" target="_blank" rel="noopener">Brutalist Websites</a> &mdash; Pascal Deville's 2014 archive that named and codified web brutalism.</li>
+              <li>Michał Malewicz, <a href="https://uxdesign.cc/neubrutalism-is-taking-over-the-web-e9d09e0fe441" target="_blank" rel="noopener">"Neubrutalism is taking over the web"</a> &mdash; UX Collective, March 2022. The essay that named the trend.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4 class="card-header">Best Practice &amp; Standards</h4>
+            <ul class="source-list">
+              <li><a href="https://www.nngroup.com/articles/neobrutalism/" target="_blank" rel="noopener">Neobrutalism: Definition and Best Practices</a> &mdash; Nielsen Norman Group, April 2025.</li>
+              <li><a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">WCAG 2.2</a> &mdash; W3C Recommendation (Oct 2023, updated Dec 2024). The accessibility baseline.</li>
+              <li><a href="https://blog.logrocket.com/ux-design/neubrutalism-web-design/" target="_blank" rel="noopener">Neubrutalism in Web Design</a> &mdash; LogRocket UX guide.</li>
+              <li><a href="https://aesthetics.fandom.com/wiki/Neubrutalism" target="_blank" rel="noopener">Neubrutalism</a> &mdash; Aesthetics Wiki. Useful on distributed origins and Y2K lineage.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4 class="card-header">Tools &amp; Libraries</h4>
+            <ul class="source-list">
+              <li><a href="https://www.neobrutalism.dev/" target="_blank" rel="noopener">neobrutalism.dev</a> &mdash; the canonical shadcn/ui-based React + Tailwind component library (<a href="https://github.com/ekmas/neobrutalism-components" target="_blank" rel="noopener">5,000+ stars</a>).</li>
+              <li><a href="https://github.com/ComradeAERGO/Awesome-Neobrutalism" target="_blank" rel="noopener">Awesome Neobrutalism</a> &mdash; a curated list of kits, libraries, and examples.</li>
+              <li><a href="https://panda-css.com/" target="_blank" rel="noopener">Panda CSS</a> &mdash; a production marketing site built in the style.</li>
+              <li><a href="https://sahil.gumroad.com/p/introducing-the-new-gumroad" target="_blank" rel="noopener">"Introducing the new Gumroad"</a> &mdash; Sahil Lavingia on the 2021 rebrand that became the poster child.</li>
+            </ul>
+          </div>
+
+          <div class="card" style="background: var(--blue-light);">
+            <h4 class="card-header">How this page is sourced</h4>
+            <p class="text-sm">Historical and standards claims are tied to primary sources above. Brand examples were each checked against the live site's rendered CSS&thinsp;&mdash;&thinsp;not blog hearsay&thinsp;&mdash;&thinsp;and dropped when they no longer matched the grammar (Figma's 2024 rebrand is the cautionary case). Where the record is genuinely contested, such as who "coined" the digital term, the page says so rather than inventing a clean origin story.</p>
+            <p class="text-sm mt-sm" style="color: #555;">Found an error or a better source? <a href="https://github.com/neubrutalism/neubrutalism.com/issues" target="_blank" rel="noopener">Open an issue</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 
@@ -1846,6 +2027,7 @@
             <li><a href="#usage">Usage Guide</a></li>
             <li><a href="#ecosystem">Ecosystem</a></li>
             <li><a href="#future">Future</a></li>
+            <li><a href="#sources">Sources</a></li>
           </ul>
         </div>
         <div>
@@ -1875,9 +2057,36 @@
     </div>
   </footer>
 
+  <!-- Back to top -->
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top" title="Back to top">&uarr;</button>
+
   <script>
   (function () {
     'use strict';
+
+    /* ---- Theme Toggle (dark / cyber-brutalism) ---- */
+    var themeToggle = document.getElementById('theme-toggle');
+    var themeColorMeta = document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(t) {
+      document.documentElement.setAttribute('data-theme', t);
+      try { localStorage.setItem('theme', t); } catch (e) {}
+      if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
+        themeToggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+        var icon = themeToggle.querySelector('.theme-toggle-icon');
+        if (icon) icon.innerHTML = t === 'dark' ? '☀' : '☾';
+      }
+      if (themeColorMeta) themeColorMeta.setAttribute('content', t === 'dark' ? '#14131a' : '#FFD23F');
+    }
+
+    if (themeToggle) {
+      applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
+      themeToggle.addEventListener('click', function () {
+        var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+      });
+    }
 
     /* ---- Mobile Menu Toggle ---- */
     var menuBtn = document.querySelector('.mobile-menu-toggle');
@@ -1919,12 +2128,38 @@
 
     sections.forEach(function (s) { spyObserver.observe(s); });
 
-    /* ---- Nav Scroll Shadow ---- */
+    /* ---- Scroll: nav shadow, reading progress, back-to-top ---- */
     var nav = document.querySelector('.nav');
+    var progressBar = document.getElementById('reading-progress');
+    var backToTop = document.getElementById('back-to-top');
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    var ticking = false;
+
+    function onScroll() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      pct = Math.max(0, Math.min(100, pct));
+
+      if (nav) nav.classList.toggle('is-scrolled', scrollTop > 10);
+      if (progressBar) progressBar.style.width = pct + '%';
+      if (backToTop) backToTop.classList.toggle('is-visible', scrollTop > 600);
+      ticking = false;
+    }
 
     window.addEventListener('scroll', function () {
-      nav.classList.toggle('is-scrolled', window.scrollY > 10);
+      if (!ticking) {
+        window.requestAnimationFrame(onScroll);
+        ticking = true;
+      }
     }, { passive: true });
+    onScroll();
+
+    if (backToTop) {
+      backToTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: prefersReduced.matches ? 'auto' : 'smooth' });
+      });
+    }
 
     /* ---- Hero Parallax / 3D Tilt ---- */
     var hero = document.querySelector('.hero');

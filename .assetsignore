@@ -1,0 +1,16 @@
+# Files in the project dir that must NOT be deployed as public assets.
+.git
+.github
+.claude
+docs
+node_modules
+.wrangler
+.dev.vars*
+.env*
+*.md
+LICENSE
+wrangler.jsonc
+.gitignore
+.assetsignore
+.DS_Store
+Thumbs.db
