@@ -2075,7 +2075,10 @@
         themeToggle.setAttribute('aria-pressed', t === 'dark' ? 'true' : 'false');
         themeToggle.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
         var icon = themeToggle.querySelector('.theme-toggle-icon');
-        if (icon) icon.innerHTML = t === 'dark' ? '☀' : '☾';
+        if (icon) {
+          icon.innerHTML = t === 'dark' ? '☀' : '☾';
+          icon.style.color = t === 'dark' ? '#fff' : '#000';
+        }
       }
       if (themeColorMeta) themeColorMeta.setAttribute('content', t === 'dark' ? '#14131a' : '#FFD23F');
     }
